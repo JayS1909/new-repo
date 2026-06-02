@@ -5,7 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/productDetails.css">
     <!-- <link rel="stylesheet" href="/css/cards.css"> -->
-    <title><%= product.productName %></title>
+    <title><%= product.productName %> | EXTRAALAYER</title>
+
+    <!-- JSON-LD Product Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "<%= product.productName %>",
+      "image": [
+        "<%= product.images[0] %>"
+      ],
+      "description": "<%= product.description ? product.description.frontPrint : 'Premium Men\\'s Streetwear' %>",
+      "sku": "<%= product.sku %>",
+      "brand": {
+        "@type": "Brand",
+        "name": "EXTRAALAYER"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://extraalayer.com/product/<%= product._id %>",
+        "priceCurrency": "INR",
+        "price": "<%= product.discountedPrice || product.originalPrice %>",
+        "availability": "https://schema.org/<%= product.quantity > 0 ? 'InStock' : 'OutOfStock' %>"
+      }
+    }
+    </script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
     </style>

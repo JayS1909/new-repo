@@ -8,12 +8,13 @@ import { trackShipment } from "../conrollers/payments.controller.js";
 
 
 const router = Router();
-router.get("/",verifyJWT,async (req,res) => {
+router.get("/",verifyJWT,async (req,res,next) => {
     try {
         const featuredProducts = await Product.find({isFeatured: true}).limit(3);
-        res.render("homepage",{user: req.user,products: featuredProducts});
+        return res.render("homepage",{user: req.user,products: featuredProducts});
     } catch (error) {
         console.log("Something went wrong in fetching home page and the featured products",error);
+        return next(error);
     }
 });
 

@@ -9,7 +9,6 @@ export const adminJWT = asyncHandler(async (req, res, next) => {
       req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
 
       if (!token) {
-        res.redirect("/")
         return res.status(401).render("errorPage", {
           title: "Unauthorized",
           message: "Unauthorized request. Please log in to access this page.",
