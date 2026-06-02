@@ -362,13 +362,13 @@ document.getElementById('checkout-btn').addEventListener('click',async () => {
                 key: 'rzp_live_ufwo3uwhKOHyBq', //Replace with your Razorpay Key ID
                 amount: data.order.amount,
                 currency: data.order.currency,
-                name: 'VINTITI',
+                name: 'EXTRAALAYER',
                 description: '',
                 order_id: data.order.id,
                 one_click_checkout: true,
                 show_coupons: true,
                 force_cod: true,
-                callback_url: "https://www.vintiti.com/",
+                callback_url: "https://www.extraalayer.com/",
                 handler: async function (response) {
                     // After successful payment, verify the payment on the backend
                     showLoader("Verifying payment and redirecting...")

@@ -40,14 +40,14 @@
     transition: 0.8s linear;
 }
 
-.vintiti-logo {
+.extraalayer-logo {
     justify-content: center;
     align-items: center;
     margin-left: 45%;
     margin-top: 10px;
 }
 
-.vintiti-logo .image {
+.extraalayer-logo .image {
     width: 160px;
     height: auto;
 }
@@ -922,14 +922,14 @@ NAVBAR
         height: 8%;
     }
 
-    .vintiti-logo {
+    .extraalayer-logo {
         justify-content: center;
         align-items: center;
         margin-left: 40%;
         margin-top: 10px;
     }
 
-    .vintiti-logo .image {
+    .extraalayer-logo .image {
         width: 150px;
         height: auto;
     }
@@ -1048,14 +1048,14 @@ NAVBAR
         height: 8%;
     }
 
-    .vintiti-logo {
+    .extraalayer-logo {
         justify-content: center;
         align-items: center;
         margin-left: 40%;
         margin-top: 10px;
     }
 
-    .vintiti-logo .image {
+    .extraalayer-logo .image {
         width: 150px;
         height: auto;
     }
@@ -1175,14 +1175,14 @@ NAVBAR
         height: 8%;
     }
 
-    .vintiti-logo {
+    .extraalayer-logo {
         justify-content: center;
         align-items: center;
         margin-left: 35%;
         margin-top: 10px;
     }
 
-    .vintiti-logo .image {
+    .extraalayer-logo .image {
         width: 140px;
         height: auto;
     }
@@ -1305,14 +1305,14 @@ NAVBAR
         width: 100%;
     }
 
-    .vintiti-logo {
+    .extraalayer-logo {
         justify-content: center;
         align-items: center;
         margin-left: 33%;
         margin-top: 10px;
     }
 
-    .vintiti-logo .image {
+    .extraalayer-logo .image {
         width: 110px;
         height: auto;
     }
@@ -1524,7 +1524,7 @@ NAVBAR
     }
 
 
-    .vintiti-logo {
+    .extraalayer-logo {
         margin-left: 10px;
         /* Adjust margin for small screens */
         margin-top: 5px;
@@ -1535,7 +1535,7 @@ NAVBAR
         /* Maintain aspect ratio */
     }
 
-    .vintiti-logo {
+    .extraalayer-logo {
         justify-content: center;
         align-items: center;
         margin-left: 35%;
@@ -1545,7 +1545,7 @@ NAVBAR
         height: auto
     }
 
-    .vintiti-logo .image {
+    .extraalayer-logo .image {
         width: 110px;
         height: auto;
     }
@@ -1766,7 +1766,7 @@ NAVBAR
         width: 110px; /* Default size */
         height: auto; /* Maintain aspect ratio */
     }
-    .vintiti-logo {
+    .extraalayer-logo {
         margin-left: 10px;
         /* Adjust margin for small screens */
         margin-top: 5px;
@@ -1777,7 +1777,7 @@ NAVBAR
         /* Maintain aspect ratio */
     }
 
-    .vintiti-logo {
+    .extraalayer-logo {
         justify-content: center;
         align-items: center;
         margin-left: 35%;
@@ -1786,7 +1786,7 @@ NAVBAR
         height: auto
     }
 
-    .vintiti-logo .image {
+    .extraalayer-logo .image {
         width: 110px;
         height: auto;
     }

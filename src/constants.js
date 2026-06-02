@@ -1,1 +1,1 @@
-export const DB_NAME = "Vintiti"
+export const DB_NAME = "EXTRAALAYER"

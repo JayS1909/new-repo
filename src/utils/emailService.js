@@ -13,14 +13,14 @@ const transporter = nodemailer.createTransport({
 export const sendRegistrationEmail = async (email, fullName) => {
     try {
         const mailOptions = {
-            from: '"VINTITI" <no-reply@vintiti.com>',
+            from: '"EXTRAALAYER" <no-reply@extraalayer.com>',
             to: email,
-            subject: `Welcome to VINTITI, ${fullName}! 🖤`,
+            subject: `Welcome to EXTRAALAYER, ${fullName}! 🖤`,
             html: `
                 <div style="font-family: Arial, sans-serif; background-color: #000; color: #fff; line-height: 1.6; max-width: 600px; margin: 0 auto; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);">
-                    <h2 style="text-align: center; color: #fff; border-bottom: 1px solid #555; padding-bottom: 10px;">Welcome to VINTITI, ${fullName}! 🖤</h2>
+                    <h2 style="text-align: center; color: #fff; border-bottom: 1px solid #555; padding-bottom: 10px;">Welcome to EXTRAALAYER, ${fullName}! 🖤</h2>
                     <p style="text-align: center; font-size: 16px; color: #bbb;">
-                        Thank you for joining the VINTITI family! We’re excited to help you <strong style="color: #fff;">"Wear the Trend, Own the Moment."</strong>
+                        Thank you for joining the EXTRAALAYER family! We’re excited to help you <strong style="color: #fff;">"Wear the Trend, Own the Moment."</strong>
                     </p>
                     <hr style="border: none; border-top: 1px solid #555; margin: 20px 0;">
                     <p style="font-size: 16px; color: #bbb;">
@@ -32,7 +32,7 @@ export const sendRegistrationEmail = async (email, fullName) => {
                         <li><strong style="color: #fff;">Your Style, Your Moment:</strong> Always make a statement.</li>
                     </ul>
                     <div style="text-align: center; margin: 20px 0;">
-                        <a href="https://www.vintiti.com" target="_blank" style="background: #fff; color: #000; text-decoration: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; display: inline-block; border: 1px solid #fff; transition: 0.3s;">
+                        <a href="https://www.extraalayer.com" target="_blank" style="background: #fff; color: #000; text-decoration: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; display: inline-block; border: 1px solid #fff; transition: 0.3s;">
                             Start Shopping Now
                         </a>
                     </div>
@@ -41,7 +41,7 @@ export const sendRegistrationEmail = async (email, fullName) => {
                     </p>
                     <p style="text-align: center; font-size: 14px; color: #555; margin-top: 30px; border-top: 1px solid #555; padding-top: 15px;">
                         <strong>"Wear the Trend, Own the Moment."</strong><br>
-                        The VINTITI Team
+                        The EXTRAALAYER Team
                     </p>
                 </div>
             `,
@@ -60,7 +60,7 @@ export const sendRegistrationEmail = async (email, fullName) => {
 export const sendOrderConfirmationEmail = async (email, fullName, orderId, amount) => {
     try {
         const mailOptions = {
-            from: '"VINTITI" <no-reply@vintiti.com>',
+            from: '"EXTRAALAYER" <no-reply@extraalayer.com>',
             to: email,
             subject: `🖤 Order Confirmation - #${orderId} 🖤`,
             html: `
@@ -79,16 +79,16 @@ export const sendOrderConfirmationEmail = async (email, fullName, orderId, amoun
                         Your order is being processed and will be shipped to you soon. Stay tuned for updates!
                     </p>
                     <div style="text-align: center; margin: 20px 0;">
-                        <a href="https://www.vintiti.com/tracking" target="_blank" style="background: #fff; color: #000; text-decoration: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; display: inline-block; border: 1px solid #fff; transition: 0.3s;">
+                        <a href="https://www.extraalayer.com/tracking" target="_blank" style="background: #fff; color: #000; text-decoration: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; display: inline-block; border: 1px solid #fff; transition: 0.3s;">
                             Track Your Order
                         </a>
                     </div>
                     <p style="font-size: 16px; color: #bbb;">
-                        If you have any questions or concerns, don’t hesitate to <a href="mailto:support@vintiti.com" style="color: #fff;">contact us</a>.
+                        If you have any questions or concerns, don’t hesitate to <a href="mailto:support@extraalayer.com" style="color: #fff;">contact us</a>.
                     </p>
                     <p style="text-align: center; font-size: 14px; color: #555; margin-top: 30px; border-top: 1px solid #555; padding-top: 15px;">
                         <strong>"Wear the Trend, Own the Moment."</strong><br>
-                        The VINTITI Team
+                        The EXTRAALAYER Team
                     </p>
                 </div>
             `,
@@ -106,7 +106,7 @@ export const sendOrderConfirmationEmail = async (email, fullName, orderId, amoun
 export const sendCancelOrderConfirmationEmail = async (email, fullName, orderId, refundAmount) => {
     try {
         const mailOptions = {
-            from: '"VINTITI" <no-reply@vintiti.com>',
+            from: '"EXTRAALAYER" <no-reply@extraalayer.com>',
             to: email,
             subject: `Order #${orderId} Canceled - Refund Processed`,
             html: `
@@ -123,15 +123,15 @@ export const sendCancelOrderConfirmationEmail = async (email, fullName, orderId,
                     </div>
                     <p style="font-size: 16px; color: #555;">
                         If you have any questions or require further assistance, feel free to contact our support team at 
-                        <a href="mailto:support@vintiti.com" style="color: #000; text-decoration: underline;">support@vintiti.com</a>.
+                        <a href="mailto:support@extraalayer.com" style="color: #000; text-decoration: underline;">support@extraalayer.com</a>.
                     </p>
                     <div style="margin-top: 30px; text-align: center;">
-                        <p style="font-size: 16px; color: #000; font-weight: bold;">Thank you for choosing VINTITI.</p>
+                        <p style="font-size: 16px; color: #000; font-weight: bold;">Thank you for choosing EXTRAALAYER.</p>
                         <p style="font-size: 14px; color: #555;">We hope to see you again soon.</p>
                     </div>
                     <hr style="margin: 30px 0; border: none; border-top: 1px solid #ccc;">
                     <div style="text-align: center;">
-                        <p style="font-size: 14px; color: #888;">Wear the trend, own the moment — Team VINTITI</p>
+                        <p style="font-size: 14px; color: #888;">Wear the trend, own the moment — Team EXTRAALAYER</p>
                     </div>
                 </div>
             `

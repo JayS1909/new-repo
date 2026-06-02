@@ -55,17 +55,17 @@ const sendOtp = async(identifier,type='email') => {
             },
         });
         let mailOptions = {
-            from: '"VINTITI" <support@vintiti.com>',
+            from: '"EXTRAALAYER" <support@extraalayer.com>',
             to: identifier,
-            subject: '🔒 Login with VINTITI OTP',
+            subject: '🔒 Login with EXTRAALAYER OTP',
             html: `
                 <div style="font-family: Arial, sans-serif; color: #333; padding: 20px; background-color: #f7f7f7; border-radius: 10px;">
                     <div style="text-align: center; margin-bottom: 20px;">
-                        <h1 style="font-size: 28px; font-weight: bold; color: #1c1c1c; margin: 0;">VINTITI</h1>
+                        <h1 style="font-size: 28px; font-weight: bold; color: #1c1c1c; margin: 0;">EXTRAALAYER</h1>
                     </div>
                     <h2 style="color: #1c1c1c; font-size: 24px; text-align: center;">Your OTP Code</h2>
                     <p style="font-size: 16px; color: #555;">Hello,</p>
-                    <p style="font-size: 16px; color: #555;">Thank you for choosing VINTITI. To securely log in to your account, please use the OTP code below:</p>
+                    <p style="font-size: 16px; color: #555;">Thank you for choosing EXTRAALAYER. To securely log in to your account, please use the OTP code below:</p>
                     <div style="text-align: center; margin: 20px 0;">
                         <span style="font-size: 32px; font-weight: bold; color: #e74c3c; padding: 10px 20px; border: 2px solid #e74c3c; border-radius: 5px; display: inline-block;">
                             ${otp}
@@ -75,7 +75,7 @@ const sendOtp = async(identifier,type='email') => {
                     <p style="font-size: 16px; color: #555;">If you didn’t request this OTP, please contact our support team immediately.</p>
                     <div style="margin-top: 30px; text-align: center;">
                         <p style="font-size: 16px; color: #555;">Best regards,</p>
-                        <p style="font-size: 16px; font-weight: bold; color: #1c1c1c;">The VINTITI Team</p>
+                        <p style="font-size: 16px; font-weight: bold; color: #1c1c1c;">The EXTRAALAYER Team</p>
                         <p style="font-size: 14px; color: #888;">Wear The Trend, Own The Moment</p>
                     </div>
                 </div>

@@ -391,7 +391,7 @@ const createDelhiveryOrder = async (order) => {
                 },
             ],
             pickup_location: {
-                // name: "VINTITI SURFACE"
+                // name: "EXTRAALAYER SURFACE"
                 name: "Warehouse 1"
             }
         });
