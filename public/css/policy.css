@@ -1,0 +1,68 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*font-family: 'Inter', sans-serif; */
+    background-color: black;
+}
+
+/* Centering the content and setting size */
+.info {
+    width: 70%;
+    /* The content will take up 70% of the screen width */
+    margin: 50px auto;
+    /* Center the content horizontally and add margin at the top */
+    background-color: white;
+    /* White background for the content area */
+    padding: 40px;
+    /* Padding inside the content box */
+    color: black;
+    /* Black text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Slight shadow for a floating effect */
+    border-radius: 8px;
+    /* Rounded corners */
+    height: 80vh;
+    /* Fixed height */
+    overflow-y: auto;
+    /* Allow vertical scroll */
+}
+
+/* Heading styling */
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    /* Center the main heading */
+    margin-bottom: 20px;
+}
+
+h5 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px;
+    color: #333;
+    /* Dark grey color for section headings */
+}
+
+/* Paragraph styling */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+    /* Slightly lighter text color for readability */
+}
+
+/* Link styling */
+a {
+    color: #007bff;
+    /* Blue color for links */
+    text-decoration: none;
+    /* Remove underlines from links */
+}
+
+a:hover {
+    text-decoration: underline;
+    /* Add underline on hover */
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Livvic:wght@200;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('partials/nav_bar') %>
+        <div id="register-page" class="container">
+            <!-- Loader -->
+            <!-- Left Section: Registration Form -->
+            <div id="left-section">
+                <h2>Wear the Trend, Own the Moment - <span>VINTITI</span>!</h2>
+                <form action="/users/register" method="POST">
+                    <% if (email) { %>
+                        <div id="register-email-section" class="input-group">
+                            <input type="hidden" name="email" value="<%= email %>">
+                        </div>
+                        <% } else { %>
+                            <div id="register-email-section" class="input-group">
+                                <input type="email" id="email-address" name="email"
+                                    placeholder="Enter your Email Address" required>
+                            </div>
+                            <% } %>
+
+                                <% if (phoneNumber) { %>
+                                    <input type="hidden" name="phoneNumber" value="<%= phoneNumber %>">
+                                    <% } else { %>
+                                        <div id="register-phone-section" class="input-group">
+                                            <input type="text" id="phone-number" name="phoneNumber"
+                                                placeholder="Phone Number" required>
+                                        </div>
+                                        <% } %>
+
+                                            <div class="input-group">
+                                                <input type="text" id="full-name" name="fullName"
+                                                    placeholder="Full Name" required>
+                                            </div>
+
+                                            <button type="submit">Register</button>
+                </form>
+                <div id="loader" class="loader" style="display: none;"></div>
+            </div>
+
+            <!-- Right Section: Image Display -->
+            <div id="right-section">
+                <img src="/images/vintiti Family.jpeg" alt="Right Side Image" />
+            </div>
+        </div>
+
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get('email');
+            const phoneNumber = urlParams.get('phoneNumber');
+
+            if (email) {
+                document.getElementById('email-address').value = email;
+            }
+
+            if (phoneNumber) {
+                document.getElementById('phone-number').value = phoneNumber;
+            }
+        </script>
+        <script src="/js/register.js"></script>
+</body>
+
+</html>

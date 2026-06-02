@@ -1,0 +1,556 @@
+h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    letter-spacing: 1px;
+    line-height: 20px;
+    margin: 0;
+    color: black;
+}
+
+.prices {
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.current-price {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    color: #333;
+}
+
+.original-price {
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.discount {
+    color: #e53935;
+    font-weight: bold;
+}
+
+.featured-products {
+    text-align: center;
+    color: white;
+    margin-left: px;
+    background-color: black;
+    padding: 0;
+    /* You can adjust padding if needed */
+    border: none;
+    margin-top: 70px;
+    /* Add margin-top to create space above the section */
+}
+
+.featured {
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 0;
+    /* You can adjust padding if needed */
+    border: none;
+    text-decoration: none;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns since you have 3 featured products */
+    gap: 20px;
+    justify-content: center;
+    /* Centers the grid */
+    padding: 20px;
+    margin: 0 auto;
+    /* Center aligns the container itself */
+}
+
+
+.card {
+    position: relative;
+    width: 95%;
+    /* Slightly wider */
+    max-width: 320px;
+    /* Increased max width */
+    height: 450px;
+    /* Increased height */
+    overflow: hidden;
+    border: 1px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    margin: 0 auto;
+
+    /* Center-aligns each card within the grid cell */
+}
+
+
+
+.card:hover {
+    transform: scale(1.02);
+    /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Add shadow */
+    border-radius: 17px;
+    /* Increase border radius on hover */
+}
+
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.card-image.active {
+    opacity: 1;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.text-overlay h3 {
+    margin-left: 1px;
+    margin-bottom: 0;
+    text-decoration: none;
+}
+
+.text-overlay .prices {
+    margin-left: 1px;
+    opacity: 0;
+}
+
+.card:hover .text-overlay {
+    bottom: 3%;
+}
+
+.card:hover .text-overlay .prices {
+    opacity: 1;
+}
+
+.dot-navigation {
+    position: absolute;
+    bottom: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.dot {
+    width: 7px;
+    height: 6px;
+    margin: 0 5px;
+    background-color: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #fff;
+    border: 2px solid #000;
+}
+
+.moreButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 73px;
+}
+
+.shimmer-button {
+    position: relative;
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: #333;
+    /* Button color */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.shimmer-button:hover {
+    background-color: #555;
+    /* Slightly lighter on hover */
+}
+
+.button-text {
+    position: relative;
+    z-index: 1;
+}
+
+.shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-25deg);
+    transition: 0.7s;
+}
+
+.shimmer-button:hover .shimmer {
+    left: 100%;
+    transition: 0.7s;
+    /* Controls speed of shimmer */
+}
+
+
+/* 
+RESPONSIVENESS
+FOR 
+CARDS
+*/
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 576px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .card {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border: 1px solid white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 449px) {
+    .card {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        border: 1px solid white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card:hover {
+        transform: 0;
+        /* Slight zoom effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        /* Add shadow */
+        border-radius: 0;
+        /* Increase border radius on hover */
+    }
+
+    .card:hover .text-overlay {
+        bottom: 0;
+    }
+
+    .text-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 3px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+        box-sizing: border-box;
+        text-align: left;
+    }
+
+    .text-overlay h3 {
+        margin-left: 0;
+        margin-bottom: 0;
+        font-size: 0.9em;
+    }
+
+    .text-overlay .prices {
+        margin-left: 0;
+        font-size: 0.9em;
+        opacity: 1;
+        /* Ensure text is always visible */
+    }
+
+    .dot-navigation {
+        display: none;
+    }
+
+    .featured-products {
+        text-align: center;
+        justify-content: center;
+        color: white;
+        margin-left: 20px;
+        background-color: black;
+        padding: 0;
+        /* You can adjust padding if needed */
+        border: none;
+        margin-top: 70px;
+        /* Add margin-top to create space above the section */
+    }
+
+    .men-products {
+        text-align: left;
+        color: white;
+        margin-left: 20px;
+        background-color: black;
+        padding: 0;
+        /* You can adjust padding if needed */
+        border: none;
+        margin-top: 70px;
+        /* Add margin-top to create space above the section */
+    }
+
+    .women-products {
+        text-align: left;
+        color: white;
+        margin-left: 20px;
+        background-color: black;
+        padding: 0;
+        /* You can adjust padding if needed */
+        border: none;
+        margin-top: 70px;
+        /* Add margin-top to create space above the section */
+    }
+
+}
+
+@media only screen and (min-width: 300px) and (max-width: 349px) {
+    .card {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        border: 1px solid white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card:hover {
+        transform: 0;
+        /* Slight zoom effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        /* Add shadow */
+        border-radius: 0;
+        /* Increase border radius on hover */
+    }
+
+    .card:hover .text-overlay {
+        bottom: 0;
+    }
+
+    .text-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 3px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+        box-sizing: border-box;
+        text-align: left;
+    }
+
+    .text-overlay h3 {
+        margin-left: 0;
+        margin-bottom: 0;
+        font-size: 0.9em;
+    }
+
+    .text-overlay .prices {
+        margin-left: 0;
+        font-size: 0.7em;
+        opacity: 1;
+        /* Ensure text is always visible */
+    }
+
+    .dot-navigation {
+        display: none;
+    }
+
+    .featured-products {
+        text-align: center;
+        justify-content: center;
+        color: white;
+        background-color: black;
+        padding: 0;
+        /* You can adjust padding if needed */
+        border: none;
+        margin-top: 70px;
+        /* Add margin-top to create space above the section */
+    }
+
+    .featured-products h1 {
+        font-family: 'Inter', sans-serif;
+    }
+
+    .men-products {
+        text-align: left;
+        color: white;
+        margin-left: 20px;
+        background-color: black;
+        padding: 0;
+        /* You can adjust padding if needed */
+        border: none;
+        margin-top: 70px;
+        /* Add margin-top to create space above the section */
+    }
+
+    .women-products {
+        text-align: left;
+        color: white;
+        margin-left: 20px;
+        background-color: black;
+        padding: 0;
+        /* You can adjust padding if needed */
+        border: none;
+        margin-top: 70px;
+        /* Add margin-top to create space above the section */
+    }
+}
+
+/* For devices with width between 300px and 449px */
+@media only screen and (max-width: 449px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        /* 1 card per row */
+        margin-left: 0;
+        margin-right: 0;
+        gap: 20px;
+        /* Spacing between rows */
+    }
+
+    .card {
+        width: 90%;
+        /* Increase card width (relative to screen width) */
+        height: 280px;
+        /* Increase height */
+        margin: 0 auto;
+        /* Center align each card */
+    }
+
+}
+
+/* For devices with width between 450px and 576px */
+@media only screen and (min-width: 450px) and (max-width: 576px) {
+    .cards-container {
+        grid-template-columns: 1fr;
+        /* 1 card per row */
+        margin-left: 5px;
+        margin-right: 5px;
+        gap: 20px;
+        /* Spacing between rows */
+    }
+
+    .card {
+        width: 95%;
+        /* Increase card width */
+        height: 300px;
+        /* Increase height */
+        margin: 0 auto;
+        /* Center align each card */
+    }
+}
+
+/* For devices with width around 580px */
+@media only screen and (min-width: 577px) and (max-width: 600px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards per row */
+        justify-content: center;
+        /* Center the grid */
+        gap: 20px;
+        /* Add spacing between cards */
+    }
+
+    /* Ensure the last card in the row is centered */
+    .card:nth-child(odd):last-child {
+        grid-column: 1 / -1;
+        /* Span across the full row */
+        justify-self: center;
+        /* Center-align the card */
+    }
+}
+
+
+/* Make dot-navigation visible in mobile view */
+@media only screen and (max-width: 450px) {
+    .dot-navigation {
+        display: flex;
+        /* Ensure it is visible */
+        bottom: 55px;
+        /* Adjust positioning */
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .dot-navigation {
+        display: flex;
+        /* Ensure it is visible */
+        bottom: px;
+        /* Adjust positioning */
+    }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINTITI</title>
+    <link rel="stylesheet" href="/css/nav_bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Fixed link -->
+</head>
+<body>
+    <nav class="navbar">
+        <div class="vintiti-logo">
+            <a href="/">
+                <img src="/images/vintiti.jpg" class="logo-image" alt="VINTITI LOGO">
+            </a>
+        </div>
+
+        <div class="profile">
+            <% if (user) { %>
+                <!-- Profile Icon -->
+                <a href="javascript:void(0)" class="profile-btn" onclick="toggleDropdown()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="60" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                    </svg>
+                </a>
+                <!-- Dropdown Menu -->
+                <div id="profileMenu" class="dropdown-content">
+                    <span style="color: black; padding: 12px 16px; display: block;">Welcome, <%= user.fullName %>!</span>
+                    <span onclick="window.location.href='/displayAuthOrders'">Order History</span>
+                    <span href="/logout" onclick="logout(event)">Logout</span>
+                </div>
+            <% } else { %>
+                <!-- Redirect to Login -->
+                <a href="/login" class="login-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="60" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                    </svg>
+                </a>
+            <% } %>
+        </div>
+
+        <!-- Cart icon -->
+        <div class="cart">
+            <a href="javascript:void(0)" id="cart-toggle">
+                <img src="/images/icons8-shopping-bag-50.png" width="20" height="20" alt="shopping cart bag">
+            </a>
+            <!-- Cart side panel -->
+            <div class="cart-panel" id="cart-panel">
+                <div class="cart-panel-header">
+                    <h5>Your Cart</h5>
+                    <a href="javascript:void(0)" id="cart-close">&times;</a>
+                </div>
+                <div class="cart-panel-content">
+                    <!-- Cart items will be listed here -->
+                    <ul id="cart-items">
+                        <!-- Items will be dynamically added here -->
+                    </ul>
+                </div>
+                <div id="cart-panel-footer" class="cart-panel-footer">
+                    <div class="cart-total">
+                        <p>Total: Rs. <span id="cart-total"></span></p>
+                    </div>
+                    <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+                </div>
+                <div class="login-prompt">
+                    <p>Don't miss out on exclusive member benefits.</p>
+                    <p><a href="/login" class="login-link">Log in</a> to get started!</p>
+                </div>
+            </div>
+            <div class="overlay" id="overlay"></div>
+        </div>
+    </nav>
+
+    <!-- This is a division of a side nav of categories -->
+    <div id="Nav-overlay" class="Nav-overlay" onclick="closeNav()"></div>
+    <div id="mySideNav" class="sideNav">
+        <ul class="nav" id="nav">
+            <li><a href="#">MEN</a></li>
+            <li><a href="#">WOMEN</a></li>
+            <li><a href="#">OTHER</a></li>
+        </ul>
+    </div>
+    <script src="/js/nav_bar.js" defer></script>
+    <script src="/js/productDetails.js" defer></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+</html>

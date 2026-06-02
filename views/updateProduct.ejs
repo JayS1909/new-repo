@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <link rel="stylesheet" href="/css/updateProducts.css">
+</head>
+<body>
+    <div class="container">
+        <h1>VINTITI</h1>
+        <h2>Update Product</h2>
+        <form action="/products/sku" method="POST">
+            <div class="form-group">
+                <label for="sku">Enter SKU ID: to quickly update the product.</label>
+                <input type="text" id="sku" name="sku" required>
+            </div>
+            <button type="submit" class="btn">Find Product</button>
+        </form>
+    </div>
+</body>
+</html>

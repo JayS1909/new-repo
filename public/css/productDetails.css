@@ -1,0 +1,1831 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@500&family=Baskervville+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+/** font start **/
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.tax-inclusive {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.original-price {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+.original-price-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+.discounted-price {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+.size-options {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.button-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.accordion-toggle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.details {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#description h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.section ul {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#care-instructions {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#size-chart h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+#size-chart p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+.short-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+
+.full-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+.section-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.text-overlay h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+.prices {
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+
+/* font end */
+body,
+ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    padding-top: 60px;
+    /* Space for fixed navbar */
+}
+
+
+body, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    padding-top: 60px; /* Space for fixed navbar */
+}
+
+
+/* card */
+
+h3 {
+    letter-spacing: 1px;
+    line-height: 20px;
+    margin: 0;
+    color: black;
+}
+
+p {
+    line-height: 25px;
+    margin: 0;
+    color: black;
+}
+
+.featured-products {
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 0; /* You can adjust padding if needed */
+    border: none;
+    margin-top: 50px; /* Add margin-top to create space above the section */
+}
+
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-left: 40px;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border: 1px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.card:hover {
+    transform: scale(1.02); /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow */
+    border-radius: 17px; /* Increase border radius on hover */
+}
+
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.card-image.active {
+    opacity: 1;
+}
+
+
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.text-overlay h3 {
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.text-overlay p {
+    margin-left: 10px;
+    opacity: 0;
+}
+.card:hover .text-overlay {
+    bottom: 3%;
+}
+
+.card:hover .text-overlay p {
+    opacity: 1;
+}
+
+
+.dot-navigation {
+    position: absolute;
+    bottom: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.dot {
+    width: 7px;
+    height: 6px;
+    margin: 0 5px;
+    background-color: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #fff;
+    border: 2px solid #000;
+}
+
+
+
+
+/* This is now the main code for the product images and the description page */
+
+/* Product Details Section */
+
+.product-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto 40px;
+    padding: 20px;
+    background-color: transparent; /* No background for the combined section */
+}
+
+/* Product Images Section */
+.product-images {
+    flex: 0 0 60%; /* Occupies 60% of the screen width */
+    /* background-color: white; */
+    border-radius: 10px;
+    background-color: black;
+    padding: 20px;
+    margin-right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: -20px;
+} 
+
+.image-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.image-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.below-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-left: -10px;
+}
+
+.image {
+    overflow: hidden;
+    width: 20%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image:hover {
+    transform: scale(1.1);
+}
+
+/* Tooltip */
+.tooltip-text {
+    visibility: hidden;
+    width: 160px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Product Details Section */
+.product-details {
+    position: relative;
+    flex: 0 0 50%; /* Occupies 40% of the screen width */
+    padding: 20px;
+    /* padding-right: 80px; */
+     /* background-color: white; */
+    border-radius: 10px; 
+    background-color: black;
+    margin: 0 5px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-details h2, .product-details h3 {
+    text-align: left;
+    color: white;
+}
+
+.price-section {
+    text-align: left;
+    margin: 10px 0;
+    color: white;
+}
+
+.original-price strike {
+    color: #929191;
+    margin-right: 10px;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.original-price {
+    color: #fefefe;
+    margin-right: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.original-price-label a {
+    color: #fefefe;
+    margin-right: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.discounted-price {
+    color: #d9534f;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.tax-inclusive {
+    color: #555;
+    font-size: 0.9em;
+}
+.size-options {
+    text-align: center;
+}
+
+.size-options h3 {
+    font-size: small;
+    text-align: left;
+    margin: 15px 0;
+    margin-bottom: 10px;
+}
+
+.size-buttons {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    /* justify-content: center; */
+}
+
+.size-buttons .close {
+    background-color: black; /* Button background color */
+    color: white; /* Button text color */
+    width: 60px; /* Width of the buttons */
+    height: 40px; /* Height of the buttons */
+    padding: 5px; /* Padding inside the buttons */
+    font-size: 14px; /* Font size of the button text */
+    border: 2px solid white; /* Button border */
+    border-radius: 17px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center; /* Center the text */
+    transition: 0.25s; /* Smooth transition for color and border changes */
+}
+
+/* Hover effect */
+.size-buttons .close:hover {
+    background-color: #555; /* Change to dark gray on hover */
+    color: white; /* Maintain white text */
+    border-color: #aaa; /* Change border to light gray */
+}
+
+/* Selected button effect */
+.size-buttons .close.selected {
+    background-color: #f1f4f7; /* Change to a blue shade when selected */
+    color: rgb(9, 8, 8); /* Maintain white text */
+    border-color: #181919; /* Blue border */
+    box-shadow: 0 0 5px #ebeef1; /* Subtle glow effect */
+}
+
+/* Out-of-stock button styling */
+.size-buttons .close.out-of-stock {
+    background-color: #7a7979; /* Light gray for unavailable sizes */
+    color: #fffdfd; /* Darker gray text */
+    text-decoration: line-through;
+    border-color: #838181; /* Match the border to the background */
+    cursor: not-allowed; /* Disable pointer interaction */
+}
+
+
+/* :root {
+    --close-color: #3e3e3e;
+    --close-hover: #a5a5a5 ; 
+} */
+
+/* Close button styles */
+button.close {
+    color: #d5d4d4; 
+    color: var(--close-color);
+    border: 2px solid var(--close-color);
+    background: none;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    transition: 0.25s;
+}
+
+button.close:hover,
+button.close:focus {
+    border-color: var(--close-hover);
+    color: black;
+    box-shadow: 
+        inset -3.5em 0 0 0 var(--close-hover),
+        inset 3.5em 0 0 0 var(--close-hover);
+}
+
+/* General styling for the page */
+
+/* Accordion Styling */
+.accordion-container {
+    width: 100%;
+    background: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-horizontal {
+    /* 1st */
+    /* display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px; */
+
+    /* 2nd */
+    /* display: flex;
+    justify-content: space-around;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; */
+
+    /* 3rd */
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.accordion-toggle {
+    flex: 1;
+    padding: 15px 0px;
+    cursor: pointer;
+    border: none;
+    border-bottom: 3px solid transparent;
+    background: none;
+    color: #dcdada;
+    transition: color 0.3s, border-bottom 0.3s, background 0.3s, transform 0.3s;
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 3px solid transparent;
+}
+
+.accordion-toggle:hover, .accordion-toggle.active {
+    /* background-color: #ddd; */
+    border-bottom: 3px solid #646363;
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px 0;
+    border-top: 1px solid #090909;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.accordion-content.active {
+    display: block;
+    opacity: 1;
+    max-height: 500px;
+}
+
+.accordion-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-content ul li {
+    padding: 10px 0;
+    font-size: 1.1em;
+    color: #aeadad;
+    display: flex;
+    align-items: center;
+    /* border-bottom: 1px solid #eee; */
+}
+
+.accordion-content ul li i {
+    margin-right: 10px;
+    color: #5a5959;
+}
+
+.accordion-content p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 10px 0;
+}
+
+.accordion-content h3 {
+    color: #c5c4c4;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/*  */
+.size-btn.active {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: black;
+}
+
+
+.description {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.details {
+    list-style-type: none;
+    padding: 0;
+}
+
+.details li {
+    padding: 5px 0;
+}
+
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h3 {
+    color: white;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.section li {
+    margin-bottom: 8px;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.section li strong {
+    font-weight: bold;
+    margin-right: 8px;
+    color: #555;
+}
+
+#size-chart {
+    padding: 20px;
+}
+
+#size-chart h3 {
+    color: white;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.size-chart-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+
+/* This 
+    is 
+    a CSS
+    for ADD TO CART 
+    BUTTON
+*/
+
+.AddToCartButton {
+    display: flex;
+    justify-content: left;
+    margin-top: 20px; /* Adjust margin as needed */
+    gap: 20px;
+}
+
+.shimmer-button {
+    position: relative;
+    background: white;
+    width: 70%;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.shimmer-button .shimmer {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(103, 103, 103, 0.5);
+    transform: skewX(-25deg);
+    transition: all 0.5s ease;
+}
+
+.shimmer-button:hover .shimmer {
+    left: 100%;
+    transition: all 0.5s ease;
+}
+
+/* 
+    CSS
+    FOR
+    WISHLIST
+    BUTTON
+*/
+
+.wishlist-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: #ff6b6b;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 15px;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.wishlist-button:hover {
+    background: #ff6b6b;
+    color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.wishlist-button:hover .wishlist-icon {
+    transform: scale(1.3);
+    color: white;
+}
+
+.wishlist-button .wishlist-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.wishlist-button.loading .wishlist-icon {
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
+
+.wishlist-button.added .wishlist-icon {
+    color: #ff6b6b;
+    /* background-color: #fff; */
+}
+
+.added:hover {
+    background: black;
+}
+
+/* 
+This
+is a CSS
+FOR
+SHARE
+BUTTON
+*/
+
+/* Share button styling */
+/* Define variables */
+:root {
+    --base-duration: 250ms;
+    --primary: black; /* Change primary color to black */
+    --accent: #46627f;
+    --white: whitesmoke;
+    --color-3: #bdc3c7;
+
+    /* Define breakpoints */
+    --sm: 20rem;
+    --med: 48rem;
+    --lg: 64rem;
+}
+
+/* Share button styling */
+.share {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Decrease width to fit the icon */
+    height: 40px; /* Decrease height to fit the icon */
+    background-color: var(--primary); /* Use variable for primary color */
+    border-radius: 50%; /* Make it circular */
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-radius 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+}
+
+.share:hover {
+    width: 120px;
+    border-radius: 50px;
+}
+
+.share .share-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 200;
+    transition: opacity 0.25s;
+}
+
+.share .social-link {
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--white);
+    font-size: 24px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.share:hover .social-link {
+    display: flex;
+}
+
+.share:hover .share-icon {
+    display: none;
+}
+
+.share .social-link i {
+    text-shadow: 1px 1px rgba(var(--accent),0.7);
+}
+
+/* .share .social-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.2);
+    i {
+        animation: bounce 0.4s linear;
+    }
+} */
+
+
+@keyframes bounce {
+    40% {transform: scale(1.4);}
+    60% {transform: scale(0.8);}
+    80% {transform: scale(1.2);}
+    100% {transform: scale(1.0);}
+}
+
+
+/* 
+delivery 
+instructions 
+CSS
+
+*/
+
+.delivery-payment-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.delivery-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 200px;
+}
+
+.delivery-info i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.short-description {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.full-description {
+    margin-top: 5px;
+    font-size: small;
+} 
+
+
+/* .delivery-info:hover .full-description {
+    display: block;
+} */
+
+/* 
+CSS
+FOR 
+RELATED 
+PRODUCTS
+*/
+
+/* General Styling */
+
+.related-products-section {
+    background-color: #000;
+    padding: 20px;
+    margin: 40px;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #cccccc;
+}
+
+/* Cards Container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns since you have 3 featured products */
+    gap: 20px;
+    justify-content: center;
+    /* Centers the grid */
+    padding: 20px;
+    margin: 0 auto;
+    /* Center aligns the container itself */
+}
+
+
+.card {
+    position: relative;
+    width: 95%;
+    /* Slightly wider */
+    max-width: 320px;
+    /* Increased max width */
+    height: 450px;
+    /* Increased height */
+    overflow: hidden;
+    border: 1px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    margin: 0 auto;
+
+    /* Center-aligns each card within the grid cell */
+}
+
+
+
+.card:hover {
+    transform: scale(1.02);
+    /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Add shadow */
+    border-radius: 17px;
+    /* Increase border radius on hover */
+}
+
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.card-image.active {
+    opacity: 1;
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.text-overlay h3 {
+    margin-left: 1px;
+    margin-bottom: 0;
+    text-decoration: none;
+}
+
+.text-overlay .prices {
+    margin-left: 1px;
+    opacity: 0;
+}
+
+.card:hover .text-overlay {
+    bottom: 3%;
+}
+
+.card:hover .text-overlay .prices {
+    opacity: 1;
+}
+
+.dot-navigation {
+    position: absolute;
+    bottom: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.dot {
+    width: 7px;
+    height: 6px;
+    margin: 0 5px;
+    background-color: #000;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #fff;
+    border: 2px solid #000;
+}
+/* 
+.moreButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 73px;
+}
+
+.shimmer-button {
+    position: relative;
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    color: white;
+    background-color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.shimmer-button:hover {
+    background-color: #555;
+}
+
+.button-text {
+    position: relative;
+    z-index: 1;
+}
+
+.shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-25deg);
+    transition: 0.7s;
+}
+
+.shimmer-button:hover .shimmer {
+    left: 100%;
+    transition: 0.7s;
+} */
+
+/* Text Overlay */
+.text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.95);
+    text-align: center;
+    box-sizing: border-box;
+    transition: bottom 0.3s ease;
+}
+
+.text-overlay h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.prices {
+    margin-top: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .text-overlay {
+    bottom: 0;
+}
+
+.card:hover .text-overlay .prices {
+    opacity: 1;
+}
+
+
+
+/* Large Desktops (992px - 1199px) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .product-section {
+      max-width: 780px;
+      margin: 20px auto 40px;
+    }
+    .product-images {
+      flex: 0 0 55%;
+    }
+    .product-details {
+      flex: 0 0 45%;
+    }
+    .image-main {
+      height: 60vh;
+    }
+    .size-buttons {
+      gap: 10px;
+    }
+
+    .shimmer-button {
+        width: 65%; /* Adjust button width */
+        font-size: 11px; /* Reduce font size */
+        padding: 14px 28px; /* Adjust padding */
+    }
+    .accordion-horizontal {
+      margin-bottom: 15px;
+    }
+    /* Text sizes */
+    h2 {
+      font-size: 24px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 16px;
+    }
+    .price-section {
+      font-size: 18px;
+    }
+    .size-options h3 {
+      font-size: 16px;
+    }
+    .accordion-toggle {
+      font-size: 16px;
+    }
+
+    .delivery-info i {
+        font-size: 22px; /* Slightly smaller icon size */
+    }
+    .delivery-info .short-description {
+        font-size: 15px; /* Adjust font size */
+    }
+    .delivery-info .full-description {
+        font-size: 13px; /* Adjust font size */
+    }
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .related-products-section{
+        margin: 38px;
+    }
+  }
+  
+  /* Medium Desktops (768px - 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .product-section {
+      max-width: 700px;
+      margin: 0px auto 30px;
+      flex-direction: column;
+    }
+    .product-images {
+      flex: 0 0 100%;
+    }
+    .product-details {
+      width: 660px;
+      margin: 10px;
+    }
+    .image-main {
+      height: 55vh;
+    }
+    .size-buttons {
+      gap: 5px;
+    }
+    .shimmer-button {
+        width: 60%;
+        font-size: 10px;
+        padding: 12px 26px;
+    }
+    .accordion-horizontal {
+      margin-bottom: 10px;
+    }
+    /* Text sizes */
+    h2 {
+      font-size: 20px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 14px;
+    }
+    .price-section {
+      font-size: 16px;
+    }
+    .size-options h3 {
+      font-size: 14px;
+    }
+    .accordion-toggle {
+      font-size: 14px;
+    }
+    .delivery-info i {
+        font-size: 20px; /* Smaller icon size */
+    }
+    .delivery-info .short-description {
+        font-size: 14px;
+    }
+    .delivery-info .full-description {
+        font-size: 12px;
+    }
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .related-products-section{
+        margin: 35px;
+    }
+}
+  
+  /* Tablets (576px - 767px) */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .product-section {
+        max-width: 550px;
+        margin: 0px auto 30px;
+        flex-direction: column;
+      }
+      .product-images {
+        flex: 0 0 100%;
+      }
+      .product-details {
+        width: 530px;
+      }
+    .image-main {
+      height: 50vh;
+    }
+    .size-buttons {
+      gap: 5px;
+    }
+    .shimmer-button {
+        width: 55%;
+        font-size: 9px;
+        padding: 10px 24px;
+    }
+    .accordion-horizontal {
+      margin-bottom: 5px;
+    }
+
+    .size-buttons .close{
+        font-size: 13px;
+    }
+    /* Text sizes */
+    h2 {
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 14px;
+    }
+    p {
+      font-size: 12px;
+    }
+    .price-section {
+      font-size: 14px;
+    }
+    .size-options h3 {
+      font-size: 12px;
+    }
+    .accordion-toggle {
+      font-size: 12px;
+    }
+    .delivery-info {
+        flex: 1 1 45%; /* Items take up 45% of the row width */
+    }
+    .delivery-info i {
+        font-size: 18px;
+    }
+    .delivery-info .short-description {
+        font-size: 13px;
+    }
+    .delivery-info .full-description {
+        font-size: 11px;
+    }
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards per row */
+        justify-content: center;
+        /* Center the grid */
+        gap: 20px;
+        /* Add spacing between cards */
+    }
+
+    /* Ensure the last card in the row is centered */
+    .card:nth-child(odd):last-child {
+        grid-column: 1 / -1;
+        /* Span across the full row */
+        justify-self: center;
+        /* Center-align the card */
+    }
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .related-products-section{
+        margin: 30px;
+    }
+}
+  
+  /* Small Tablets (450px - 576px) */
+@media only screen and (min-width: 450px) and (max-width: 576px) {
+    .product-section {
+        max-width: 450px;
+        margin: 0px auto 30px;
+        flex-direction: column;
+      }
+      .product-images {
+        flex: 0 0 100%;
+      }
+      .product-details {
+        width: 410px;
+      }
+    .image-main {
+      height: 45vh;
+    }
+    .size-buttons {
+      gap: 5px;
+    }
+    .shimmer-button {
+        width: 70%;
+        font-size: 10px;
+        padding: 8px 22px;
+    }
+
+    .size-buttons .close{
+        font-size: 12px;
+    }
+    .accordion-horizontal {
+      margin-bottom: 5px;
+    }
+    /* Text sizes */
+    h2 {
+      font-size: 16px;
+    }
+    h3 {
+      font-size: 12px;
+    }
+    p {
+      font-size: 10px;
+    }
+    .price-section {
+      font-size: 12px;
+    }
+    .size-options h3 {
+      font-size: 10px;
+    }
+    .accordion-toggle {
+      font-size: 10px;
+    }
+    .delivery-info {
+        flex: 1 1 100%; /* Stacks items vertically */
+    }
+    .delivery-info i {
+        font-size: 16px;
+    }
+    .delivery-info .short-description {
+        font-size: 12px;
+    }
+    .delivery-info .full-description {
+        font-size: 10px;
+    }
+    .dot-navigation {
+        display: flex;
+        /* Ensure it is visible */
+        bottom: px;
+        /* Adjust positioning */
+    }
+    .cards-container {
+        grid-template-columns: 1fr;
+        /* 1 card per row */
+        margin-left: 5px;
+        margin-right: 5px;
+        gap: 20px;
+        /* Spacing between rows */
+    }
+
+    .card {
+        width: 95%;
+        /* Increase card width */
+        height: 300px;
+        /* Increase height */
+        margin: 0 auto;
+        /* Center align each card */
+    }
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .card {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border: 1px solid white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    }
+    .related-products-section{
+        margin: 28px;
+    }
+}
+  
+  /* Large Mobiles (350px - 449px) */
+@media only screen and (min-width: 370px) and (max-width: 449px) {
+    .product-section {
+      max-width: 350px;
+      margin: 20px auto 10px;
+      flex-direction: column;
+      margin-left: auto;
+      justify-content: center;
+      padding: 0%;
+      padding-right: 20px;
+    }
+    .product-images {
+        flex: 0 0 100%;
+        width: auto;
+        height: 300px;
+        margin-left: 3%;
+    }
+
+    .product-details {
+        width: 350px;
+        margin: 0 0;
+        /* padding-right: 20px; */
+        padding: 5px;
+        margin-left: 3%;
+        
+    }
+    .image-main {
+      height: 40vh;
+    }
+    .size-buttons {
+      gap: 2px;
+    }
+
+    .shimmer-button {
+        width: 70%;
+        font-size: 10px;
+        padding: 8px 22px;
+    }
+
+    .size-buttons .close{
+        font-size: 11px;
+    }
+    .accordion-horizontal {
+      margin-bottom: 5px;
+    }
+    /* Text sizes */
+    h2 {
+      font-size: 14px;
+    }
+    h3 {
+      font-size: 10px;
+    }
+    p {
+      font-size: 9px;
+    }
+    .price-section {
+      font-size: 10px;
+    }
+    .size-options h3 {
+      font-size: 9px;
+    }
+    .accordion-toggle {
+      font-size: 9px;
+    }
+
+    .details {
+        font-size: 12px;
+      }
+
+      .accordion-content h3{
+        font-size: 14px;
+      }
+
+      .accordion-content ul{
+        font-size: 12px;
+      }
+      #size-chart h3 {
+        font-size: 14px;
+      }
+
+      #size-chart p {
+        font-size: 12px;
+      }
+      .delivery-info {
+        flex: 1 1 100%; /* Fully stacked layout */
+    }
+    .delivery-info i {
+        font-size: 14px; /* Smaller icon size */
+    }
+    .delivery-info .short-description {
+        font-size: 11px;
+    }
+    .delivery-info .full-description {
+        font-size: 9px;
+    }
+    .dot-navigation {
+        display: flex;
+        /* Ensure it is visible */
+        bottom: 55px;
+        /* Adjust positioning */
+    }
+    .cards-container {
+        grid-template-columns: 1fr;
+        /* 1 card per row */
+        margin-left: 0;
+        margin-right: 0;
+        gap: 20px;
+        /* Spacing between rows */
+    }
+
+    .card {
+        width: 90%;
+        /* Increase card width (relative to screen width) */
+        height: 280px;
+        /* Increase height */
+        margin: 0 auto;
+        /* Center align each card */
+    }
+    .card {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        border: 1px solid white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card:hover {
+        transform: 0;
+        /* Slight zoom effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        /* Add shadow */
+        border-radius: 0;
+        /* Increase border radius on hover */
+    }
+
+    .card:hover .text-overlay {
+        bottom: 0;
+    }
+
+    .text-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 3px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+        box-sizing: border-box;
+        text-align: left;
+    }
+
+    .text-overlay h3 {
+        margin-left: 0;
+        margin-bottom: 0;
+        font-size: 0.9em;
+    }
+
+    .text-overlay .prices {
+        margin-left: 0;
+        font-size: 0.9em;
+        opacity: 1;
+        /* Ensure text is always visible */
+    }
+
+    .dot-navigation {
+        display: none;
+    }
+
+    .related-products-section{
+        margin: 25px;
+    }
+}
+  
+  /* Small Mobiles (280px - 349px) */
+@media only screen and (min-width: 280px) and (max-width: 370px) {
+    .product-section {
+        max-width: 350px;
+        margin: 20px auto 10px;
+        flex-direction: column;
+        margin-left: auto;
+        justify-content: center;
+        padding: 0%;
+        padding-right: 20px;
+      }
+      .product-images {
+          flex: 0 0 100%;
+          width: auto;
+          height: 300px;
+          margin-left: 6%;
+      }
+  
+      .product-details {
+          width: 300px;
+          margin: 0 0;
+          /* padding-right: 20px; */
+          padding: 5px;
+          margin-left: 6%;
+          
+      }
+      .image-main {
+        height: 40vh;
+      }
+      .size-buttons {
+        gap: 2px;
+      }
+      .shimmer-button {
+        width: 70%;
+        font-size: 10px;
+        padding: 8px 22px;
+    }
+
+      .size-buttons .close{
+        font-size: 10px;
+    }
+      .accordion-horizontal {
+        margin-bottom: 5px;
+      }
+      /* Text sizes */
+      h2 {
+        font-size: 14px;
+      }
+      h3 {
+        font-size: 10px;
+      }
+      p {
+        font-size: 9px;
+      }
+      .price-section {
+        font-size: 10px;
+      }
+      .size-options h3 {
+        font-size: 9px;
+      }
+      .accordion-toggle {
+        font-size: 9px;
+      }
+      .details {
+        font-size: 10px;
+      }
+
+      .accordion-content h3{
+        font-size: 14px;
+      }
+
+      .accordion-content ul{
+        font-size: 10px;
+      }
+      #size-chart h3 {
+        font-size: 14px;
+      }
+
+      #size-chart p {
+        font-size: 12px;
+      }
+      .delivery-info {
+        flex: 1 1 100%; /* Fully stacked layout */
+    }
+    .delivery-info i {
+        font-size: 12px; /* Smallest icon size */
+    }
+    .delivery-info .short-description {
+        font-size: 10px;
+    }
+    .delivery-info .full-description {
+        font-size: 8px;
+    }
+
+    .card {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        border: 1px solid white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card:hover {
+        transform: 0;
+        /* Slight zoom effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        /* Add shadow */
+        border-radius: 0;
+        /* Increase border radius on hover */
+    }
+
+    .card:hover .text-overlay {
+        bottom: 0;
+    }
+
+    .text-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 3px;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+        box-sizing: border-box;
+        text-align: left;
+    }
+
+    .text-overlay h3 {
+        margin-left: 0;
+        margin-bottom: 0;
+        font-size: 0.9em;
+    }
+
+    .text-overlay .prices {
+        margin-left: 0;
+        font-size: 0.7em;
+        opacity: 1;
+        /* Ensure text is always visible */
+    }
+
+    .dot-navigation {
+        display: none;
+    }
+    .related-products-section{
+        margin: 20px;
+    }
+}
+  

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-nav">
+            <h1>Admin Dashboard</h1>
+            <ul>
+                <li><a href="/admin/addproduct"><i class="fas fa-plus"></i> Add Product</a></li>
+                <li><a href="/admin/updateproduct"><i class="fas fa-edit"></i> Update Product</a></li>
+                <li><a href="/admin/deleteproduct"><i class="fas fa-trash"></i> Delete Product</a></li>
+                <li><a href="/admin/inventory"><i class="fas fa-box"></i> Inventory Check</a></li>
+                <li><a href="/admin/vieworders"><i class="fas fa-eye"></i> View Orders</a></li>
+                <li><a href="/admin/intransitOrders"><i class="fas fa-shipping-fast"></i> In-Transit Orders</a></li>
+                <li><a href="/admin/pendingOrders"><i class="fas fa-clock"></i> Pending Orders</a></li>
+                <li><a href="/admin/dispatchedOrders"><i class="fas fa-truck"></i> Dispatched Orders</a></li>
+                <li><a href="/admin/deliveredorders"><i class="fas fa-check-circle"></i> Delivered Orders</a></li>
+                <li><a href="/admin/cancelOrders"><i class="fas fa-ban"></i> Cancelled Orders</a></li>
+                
+
+            </ul>
+        </nav>
+        <div class="content">
+            <h2>Welcome to Admin Dashboard</h2>
+            <p>Use the links on the left to manage products.</p>
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <h3>Total Products</h3>
+                    <p>125</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Orders</h3>
+                    <p>15</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Delivered Orders</h3>
+                    <p>98</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

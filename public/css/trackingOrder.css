@@ -1,0 +1,401 @@
+/* font start */
+h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.input-group label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.input-group label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#tracking-input button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+.status {
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+
+.shipment-header h2,
+p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.detail-item {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+.timeline h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.scan {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+
+/* font end */
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: 'Poppins', sans-serif; */
+    background-color: #000;
+    color: #fff;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+}
+
+/* Tracking Form */
+.tracking-form {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.input-group label {
+    font-size: 1rem;
+    color: white;
+}
+
+input[type="text"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #222;
+    color: #fff;
+    transition: border-color 0.3s ease;
+    margin-top: 10px;
+}
+
+input[type="text"]:focus {
+    border-color: #fff;
+    outline: none;
+}
+
+button {
+    background: white;
+    color: #000;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+/* Error Message */
+.error-message {
+    color: #ff4d4d;
+    background-color: #220000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: none;
+    font-size: 0.9rem;
+}
+
+/* Tracking Results */
+.tracking-results {
+    display: none;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.shipment {
+    border: 1px solid #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #222;
+    transition: box-shadow 0.3s ease;
+}
+
+.shipment:hover {
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.shipment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.shipment-header p {
+    margin-top: 4px;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-align: center;
+    line-height: 1.5;
+    background-color: #444;
+    color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 15px;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.detail-item {
+    padding: 15px;
+    background-color: #333;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #ccc;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Tracking Timeline */
+.timeline {
+    margin-top: 30px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.scan {
+    position: relative;
+    padding: 12px 0 12px 40px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+    background-color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.scan:hover {
+    background-color: #444;
+}
+
+.scan:before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 15px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #333;
+}
+
+.scan strong {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    margin-left: 5px;
+}
+
+.scan p {
+    margin-top: 5px;
+    color: #ddd;
+}
+
+.scan em {
+    font-style: italic;
+    color: #bbb;
+}
+
+/* Media Queries 
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    input[type="text"] {
+        padding: 12px;
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .scan {
+        padding: 10px 0 10px 30px;
+    }
+}
+*/
+/* Responsive Design */
+
+/* Large Desktops (992px - 1199px) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 700px;
+    }
+}
+
+/* Medium Desktops (768px - 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 600px;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+}
+
+/* Tablets (576px - 767px) */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .container {
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    input[type="text"] {
+        padding: 12px;
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+}
+
+/* Small Tablets (450px - 576px) */
+@media only screen and (min-width: 450px) and (max-width: 576px) {
+    .container {
+        max-width: 400px;
+    }
+
+    .scan {
+        padding: 10px 0 10px 30px;
+    }
+
+    .status {
+        margin-top: 1px;
+        margin-right: -8px;
+    }
+}
+
+/* Large Mobiles (370px - 449px) */
+@media only screen and (min-width: 370px) and (max-width: 449px) {
+    .container {
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+    }
+
+    .shipment-header {
+        font-size: 10px;
+    }
+
+    .status {
+        margin-top: 10px;
+        height: 15px;
+    }
+}
+
+/* Small Mobiles (280px - 370px) */
+@media only screen and (min-width: 280px) and (max-width: 370px) {
+    .container {
+        max-width: 90%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    input[type="text"] {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+
+    .shipment-header {
+        font-size: 10px;
+    }
+}

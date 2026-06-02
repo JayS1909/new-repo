@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/cards.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="icon" href="/images/Vintiti small logo.jpg">
+    <title>Vintiti Oversized T-Shirts - Modern Streetwear for Men & Women</title>
+</head>
+<body>
+    <%- include('partials/nav_bar') %>
+
+
+    <div class="video-container">
+        <!-- Video for larger screens -->
+        <video class="video-large" autoplay muted loop playsinline>
+          <source src="./images/mainweb.mov" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    
+        <!-- Video for smaller screens -->
+        <video class="video-small" autoplay muted loop playsinline>
+          <source src="./images/main.mov" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+
+
+    <div class="featured-products">
+        <h1>FEATURED PRODUCTS</h1>
+    </div>
+
+    <div class="featured">
+        <div class="cards-container">
+            <% products.forEach((Product, index) => { %>
+                <a href="/product/<%= Product._id %>">
+                    <div class="card" id="interactive-card<%=index + 1 %>">
+                        <img src="<%= Product.images[0]%>" class="card-image active" id="default<%= index + 1 %> " alt="Vintiti Oversized T-shirt image">
+                        <img src="<%= Product.images[1]%>" class="card-image" id = "image<%= index + 1 %>_1" alt="Vintiti Oversized T-shirt image">
+                        <img src="<%= Product.images[2]%>" class="card-image" id="image<%= index + 1 %>_2" alt="Vintiti Oversized T-shirt image">
+                        <img src="<%= Product.images[3]%>" class="card-image" id="image<%= index+1 %>_3" alt="Vintiti Oversized T-shirt image">
+                        <div class="dot-navigation">
+                            <span class="dot" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                        </div>
+                        <div class="text-overlay">
+                            <h3 style="font-weight: bold;"><%= Product.productName %></h3>
+                            <div class="prices">
+                                <% if (Product.discountedPercentage > 0) { %>
+                                    <span class="current-price">₹ <%= Product.discountedPrice %></span>
+                                    <span class="original-price">₹ <%= Product.originalPrice %></span>
+                                    <span class="discount">₹ <%= Product.originalPrice - Product.discountedPrice %> OFF</span>
+                                <% } else { %>
+                                    <span class="current-price">₹ <%= Product.originalPrice %></span>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </a>   
+           <% }); %> 
+        </div>
+    </div>
+    <!-- viewAll-button.ejs -->
+    <div class="moreButton">
+        <a href="/viewAll" class="shimmer-button" id="shimmerButton">
+            <span class="button-text">VIEW ALL</span>
+            <span class="shimmer" id="shimmer"></span>
+        </a>
+    </div>
+    <div class="video-container">
+        <video autoplay loop muted playsinline class="vcc">
+            <source src="/images/street.mp4" type="video/mp4">
+        </video>
+    </div>
+
+
+    <!-- Brand Section -->
+    <section class="brand" id="brand">
+        <div class="brand">
+            <div class="section__container">
+                <div class="split-screen">
+                    <!-- Image side - 65% width -->
+                    <div class="image-side">
+                        <div class="image-sequence" id="image-sequence">
+                            <img src="/images/s1.JPEG" class="image active" alt="Group of models wearing Vintiti unisex oversized t-shirts, featuring vibrant designs and casual streetwear styles, showcasing the brand's diverse and inclusive fashion appeal.">
+                            <img src="/images/s2.JPEG" class="image" alt="Vintiti oversized t-shirts styled by four models, showcasing 'Exotic' tropical prints, 'Too Unique' bunny design, and minimalist logo prints.">
+                            <img src="/images/3d.jpg" class="image" alt="Modern unisex streetwear collection by Vintiti, featuring oversized t-shirts in bold and creative designs, modeled by six individuals.">
+                            <div class="overlay"></div> <!-- Dark Overlay -->
+                        </div>
+                    </div>
+                    <!-- Text side - 35% width -->
+                    <div class="text-side">
+                        <div class="text-box">
+                            <div class="banner-text">
+                                <h1>VINTITI</h1>
+                                <h2>Streetwear for the Fearless</h2>
+                                <p>Welcome to VINTITI, where oversized fits meet premium puff prints and 100% cotton comfort. Designed for trendsetters and rule-breakers, our collection redefines streetwear with style that stands out.</p>
+                                <p>With Pan-India delivery and more drops coming soon, this is just the start of a journey where fashion makes a statement and sets a lifestyle.</p>
+                                <p>Be bold. Be VINTITI.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+<script>
+let currentIndex = 0;
+const images = document.querySelectorAll('.image');
+
+function showNextImage() {
+    // Remove active class from current image
+    images[currentIndex].classList.remove('active');
+    
+    // Update index to the next image
+    currentIndex = (currentIndex + 1) % images.length;
+    
+    // Add active class to the next image
+    images[currentIndex].classList.add('active');
+}
+
+// Change image every 3 seconds
+setInterval(showNextImage, 3000);
+</script>
+    
+    
+    <div class="marquee">
+        <div class="marquee-content">
+            <% for (let i = 0; i < 100; i++) { %>
+                <span style="font-weight: bold;">STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <% } %>
+        </div>
+        <div class="marquee-content">
+            <% for (let i = 0; i < 100; i++) { %>
+                <span style="font-weight: bold;">STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <% } %>
+        </div>
+    </div>
+   
+
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="title">
+                <h2>Instagram</h2>
+                <p>Feeds And Reels</p>
+            </div>
+            <div class="section__container portfolio__container">
+                <div class="portfolio__grid">
+                    <% const posts = [
+                        { img: '/images/coffee.jpeg', link: 'https://www.instagram.com/reel/DB835_bKjw2/?igsh=cXdyaTR2c2QzaW9k' },
+                        { img: '/images/street.jpeg', link: 'https://www.instagram.com/reel/DCg7vJtMLG_/?igsh=cGhpZGtldGZ3azJu' },
+                        { img: '/images/girl.jpeg', link: 'https://www.instagram.com/reel/DBWTqFjKu7N/?igsh=dWlrbWRlMTRmZG9i' },
+                        { img: '/images/Seebeyond.png', link: 'https://www.instagram.com/p/DCy3qj1MwUg/' },
+                        { img: '/images/dfs.png', link: 'https://www.instagram.com/p/DCMXcDpMK28/' },
+                        { img: '/images/rabbit.png', link: 'https://www.instagram.com/p/DEUvg5NT75k/' }
+                    ]; %>
+                    <% posts.forEach(post => { %>
+                        <a href="<%= post.link %>" target="_blank" class="portfolio__card">
+                            <img src="<%= post.img %>" alt="portfolio" />
+                            <div class="portfolio__content">
+                                <p>VIEW POST</p>
+                            </div>
+                        </a>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+    <!-- <div class="men-products">
+        <h1>MENS WEAR</h1>
+    </div>
+    <div class="mens">
+            <div class="cards-container">
+                <div class="card" id="interactive-card5">
+                    <img src="/images/m4-1.jpeg" class="card-image active" id="default5" alt="Default Image">
+                    <img src="/images/m4-2.jpeg" class="card-image" id="image5_1" alt="Product Image 1">
+                    <img src="/images/m4-3.jpeg" class="card-image" id="image5_2" alt="Product Image 2">
+                    <img src="/images/m4-4.jpeg" class="card-image" id="image5_3" alt="Product Image 3">
+                    <div class="dot-navigation">
+                        <span class="dot" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                    <div class="text-overlay">
+                        <h3 style="text-decoration: underline;">Over-sized T-shirt</h3>
+                        <div class="prices">
+                            <span class="current-price">₹ 799</span>
+                            <span class="original-price">₹ 999</span>
+                            <span class="discount">₹ 200 OFF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="interactive-card6">
+                    <img src="/images/m5-1.jpeg" class="card-image active" id="default6" alt="Default Image">
+                    <img src="/images/m5-2.jpeg" class="card-image" id="image6_1" alt="Product Image 1">
+                    <img src="/images/m5-3.jpeg" class="card-image" id="image6_2" alt="Product Image 2">
+                    <img src="/images/m5-4.jpeg" class="card-image" id="image6_3" alt="Product Image 3">
+                    <div class="dot-navigation">
+                        <span class="dot" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                    <div class="text-overlay">
+                        <h3 style="text-decoration: underline;">Over-sized T-shirt</h3>
+                        <div class="prices">
+                            <span class="current-price">₹ 799</span>
+                            <span class="original-price">₹ 999</span>
+                            <span class="discount">₹ 200 OFF</span>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="card" id="interactive-card7">
+                    <img src="/images/m4-1.jpeg" class="card-image active" id="default7" alt="Default Image">
+                    <img src="/images/m4-2.jpeg" class="card-image" id="image7_1" alt="Product Image 1">
+                    <img src="/images/m4-3.jpeg" class="card-image" id="image7_2" alt="Product Image 2">
+                    <img src="/images/m4-4.jpeg" class="card-image" id="image7_3" alt="Product Image 3">
+                    <div class="dot-navigation">
+                        <span class="dot" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                    <div class="text-overlay">
+                        <h3 style="text-decoration: underline;">Over-sized T-shirt</h3>
+                        <div class="prices">
+                            <span class="current-price">₹ 799</span>
+                            <span class="original-price">₹ 999</span>
+                            <span class="discount">₹ 200 OFF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="interactive-card8">
+                    <img src="/images/m5-1.jpeg" class="card-image active" id="default8" alt="Default Image">
+                    <img src="/images/m5-2.jpeg" class="card-image" id="image8_1" alt="Product Image 1">
+                    <img src="/images/m5-3.jpeg" class="card-image" id="image8_2" alt="Product Image 2">
+                    <img src="/images/m5-4.jpeg" class="card-image" id="image8_3" alt="Product Image 3">
+                    <div class="dot-navigation">
+                        <span class="dot" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                    <div class="text-overlay">
+                        <h3 style="text-decoration: underline;">Over-sized T-shirt</h3>
+                        <div class="prices">
+                            <span class="current-price">₹ 799</span>
+                            <span class="original-price">₹ 999</span>
+                            <span class="discount">₹ 200 OFF</span>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <div class="moreButton">
+                <a href="mens.html" class="shimmer-button" id="shimmerButton">
+                    <span class="button-text">VIEW ALL</span>
+                    <span class="shimmer" id="shimmer"></span>
+                </a>
+            </div>
+    </div> -->
+
+    <!-- streetwaer strip -->
+
+    <!-- <div class="marquee">
+        <div class="marquee-content">
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>STREETWEAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </div> -->
+
+    <!-- <div class="women-products">
+        <h1>WOMEN WEAR</h1>
+    </div>
+    <div class="womens">
+        <div class="cards-container">
+            <div class="card" id="interactive-card9">
+                <img src="/images/m1-1.jpeg" class="card-image active" id="default9" alt="Default Image">
+                <img src="/images/m1-2.jpeg" class="card-image" id="image1_1" alt="Product Image 1">
+                <img src="/images/m1-3.jpeg" class="card-image" id="image1_2" alt="Product Image 2">
+                <img src="/images/m1-4.jpeg" class="card-image" id="image1_3" alt="Product Image 3">
+                <div class="dot-navigation">
+                    <span class="dot" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <div class="text-overlay">
+                    <h3 style="text-decoration: underline;">Over-sized T-shirt</h3>
+                    <div class="prices">
+                        <span class="current-price">₹ 799</span>
+                        <span class="original-price">₹ 999</span>
+                        <span class="discount">₹ 200 OFF</span>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="card" id="interactive-card10">
+                <img src="/images/m2-1.jpeg" class="card-image active" id="default10" alt="Default Image">
+                <img src="/images/m2-2.jpeg" class="card-image" id="image2_1" alt="Product Image 1">
+                <img src="/images/m2-3.jpeg" class="card-image" id="image2_2" alt="Product Image 2">
+                <img src="/images/m2-4.jpeg" class="card-image" id="image2_3" alt="Product Image 3">
+                <div class="dot-navigation">
+                    <span class="dot" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <div class="text-overlay">
+                    <h3 style="text-decoration: underline;">Over-sized T-shirt</h3>
+                    <div class="prices">
+                        <span class="current-price">₹ 799</span>
+                        <span class="original-price">₹ 999</span>
+                        <span class="discount">₹ 200 OFF</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" id="interactive-card11">
+                <img src="/images/m3-1.jpeg" class="card-image active" id="default11" alt="Default Image">
+                <img src="/images/m3-2.jpeg" class="card-image" id="image3_1" alt="Product Image 1">
+                <img src="/images/m3-3.jpeg" class="card-image" id="image3_2" alt="Product Image 2">
+                <img src="/images/m3-4.jpeg" class="card-image" id="image3_3" alt="Product Image 3">
+                <div class="dot-navigation">
+                    <span class="dot" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <div class="text-overlay">
+                    <h3 style="text-decoration: underline;">Over-sized T-shirt</h3>
+                    <div class="prices">
+                        <span class="current-price">₹ 799</span>
+                        <span class="original-price">₹ 999</span>
+                        <span class="discount">₹ 200 OFF</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" id="interactive-card12">
+                <img src="/images/m1-1.jpeg" class="card-image active" id="default12" alt="Default Image">
+                <img src="/images/m1-2.jpeg" class="card-image" id="image4_1" alt="Product Image 1">
+                <img src="/images/m1-3.jpeg" class="card-image" id="image4_2" alt="Product Image 2">
+                <img src="/images/m1-4.jpeg" class="card-image" id="image4_3" alt="Product Image 3">
+                <div class="dot-navigation">
+                    <span class="dot" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+                <div class="text-overlay">
+                    <h3 style="text-decoration: underline;">Over-sized T-shirt</h3>
+                    <div class="prices">
+                        <span class="current-price">₹ 799</span>
+                        <span class="original-price">₹ 999</span>
+                        <span class="discount">₹ 200 OFF</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="moreButton">
+            <a href="womens.html" class="shimmer-button" id="shimmerButton">
+                <span class="button-text">VIEW ALL</span>
+                <span class="shimmer" id="shimmer"></span>
+            </a>
+        </div>
+    </div> -->
+
+    <!-- VINTIT DESCRIPTION PAGE -->
+    <!-- <div class="informationpage">
+        <div class="slider">
+            <div class="slides">
+                <div class="slide" id="slide-1">
+                    <h2>Slide 1</h2>
+                    <p>This is the description for slide 1.</p>
+                </div>
+                <div class="slide" id="slide-2">
+                    <h2>Slide 2</h2>
+                    <p>This is the description for slide 2.</p>
+                </div>
+                <div class="slide" id="slide-3">
+                    <h2>Slide 3</h2>
+                    <p>This is the description for slide 3.</p>
+                </div>
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </div> -->
+
+    <!-- FOOTER SECTION -->
+    <%- include('partials/footer') %>
+
+    <script src="/js/cards.js"></script>
+    <script src="/js/nav_bar.js"></script>
+
+</body>
+</html>

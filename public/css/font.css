@@ -1,0 +1,11 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+
+h1,
+h2,
+h3,
+p,
+button {
+    font-family: inherit;
+}

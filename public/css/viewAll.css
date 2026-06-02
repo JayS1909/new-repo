@@ -1,0 +1,32 @@
+/* Section Titles */
+body {
+    margin-top: 30px;
+    background-color: black;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+    letter-spacing: 1px;
+    text-align: center;
+    color: white;
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+}
+
+/* Layout for Product Sections */
+.view-all {
+    margin: 0 auto;
+    padding: 20px 0;
+    background-color: #f8f9fa;
+    background-color: black;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 40px;
+}

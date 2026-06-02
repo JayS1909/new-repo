@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Order</title>
+    <link rel="stylesheet" href="/css/cancelOrder.css"> <!-- Link to external CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"rel="stylesheet">
+</head>
+<body>
+    <div class="cancel-order-container">
+        <h1 class="heading">Cancel Your Order</h1>
+        <p class="instructions">
+            Before proceeding with your cancellation request, please ensure that you have read and understood our 
+            <a href="/shippingPolicy" target="_blank">cancellation policies</a>. Once your order is canceled, it cannot be undone.
+        </p>
+
+        <form id="cancelOrderForm" action="/cancelOrder" method="POST">
+            <div class="form-group">
+                <label for="orderId">Order ID</label>
+                <input
+                    type="text"
+                    id="orderId"
+                    name="orderId"
+                    class="input-field"
+                    placeholder="Enter your Order ID"
+                    required
+                />
+            </div>
+
+            <button type="submit" class="cancel-button" onclick="submitOrderId(event)">Cancel Order</button>
+        </form>
+        <div id="messageContainer" class="message-container"></div>
+
+        <div id="loaderOverlay" class="loader-overlay">
+            <div class="pulsing-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLoader(show) {
+            const loaderOverlay = document.getElementById('loaderOverlay');
+            loaderOverlay.style.display = show ? 'flex' : 'none';
+        }
+
+        function showMessage(message,type) {
+            const messageContainer = document.getElementById('messageContainer');
+            messageContainer.className = `message-container ${type}-message`;
+            messageContainer.textContent = message;
+            messageContainer.style.display = 'block';
+
+            setTimeout(() => {
+                messageContainer.style.display = 'none';
+            },10000);
+        }
+
+        function submitOrderId(event) {
+            event.preventDefault();
+
+            const orderId = document.getElementById('orderId').value.trim();
+            if (!orderId) {
+                alert('Please enter a valid order ID');
+                return;
+            }
+            console.log("The order id: ",orderId);
+            showLoader(true);
+            fetch('/api/cancelOrder', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ orderId: orderId })
+            })
+            .then(response => response.json())
+            .then(result => {
+                const { statusCode, message } = result;
+                switch(statusCode) {
+                    case 404: 
+                        showMessage("Order does not exist", 'error');
+                        break;
+                    case 406: 
+                        showMessage("Order cannot be cancelled", 'error');
+                        break;
+                    case 409: 
+                        showMessage("Order is already cancelled", 'error');
+                        break;
+                    case 200: 
+                        showMessage("Order cancelled successfully", 'success');
+                        break;
+                    case 400: 
+                        showMessage("Failed to cancel order", 'error');
+                        break;
+                    default:
+                        showMessage(message || "Unexpected response",'error');
+                }
+            })
+            .catch(error => {
+                console.log("Error message: ",error);
+            })
+            .finally(() => {
+                showLoader(false); // Hide loader after response
+            });
+        }
+
+        // document.getElementById('cancelOrderForm').addEventListener('submit', function (event) {
+        //     const orderId = document.getElementById('orderId').value.trim();
+
+        //     if (!orderId) {
+        //         event.preventDefault();
+        //         alert('Please enter a valid Order ID or Waybill Number.');
+        //     }
+        // });
+    </script>
+</body>
+</html>
+

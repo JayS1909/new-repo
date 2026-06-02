@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <link rel="stylesheet" href="/css/addProducts.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Update Product Details</h1>
+        <form action="/products/update" method="POST">
+            <input type="hidden" name="sku" value="<%= product.sku %>">
+            <div class="form-group">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="productName" value="<%= product.productName %>" required>
+            </div>
+            <div class="form-group">
+                <label for="originalPrice">Original Price:</label>
+                <input type="number" id="originalPrice" name="originalPrice" value="<%= product.originalPrice%>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="discountedPercentage">Discount Percentage:</label>
+                <input type="number" id="discountedPercentage" name="discountedPercentage" value="<%= product.discountedPercentage %>" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="sizeXS">Size XS Quantity:</label>
+                <input type="number" id="sizeXS" name="sizes[XS]" value="<%= product.sizes.get('XS') || 0 %>" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="sizeS">Size S Quantity:</label>
+                <input type="number" id="sizeS" name="sizes[S]" value="<%= product.sizes.get('S') %>" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="sizeM">Size M Quantity:</label>
+                <input type="number" id="sizeM" name="sizes[M]" value="<%= product.sizes.get('M') %>" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="sizeL">Size L Quantity:</label>
+                <input type="number" id="sizeL" name="sizes[L]" value="<%= product.sizes.get('L') %>" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="sizeXL">Size XL Quantity:</label>
+                <input type="number" id="sizeXL" name="sizes[XL]" value="<%= product.sizes.get('XL') %>" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="sizeXXL">Size XXL Quantity:</label>
+                <input type="number" id="sizeXXL" name="sizes[XXL]" value="<%= product.sizes.get('XXL') %>" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="isFeatured">Featured:</label>
+                <input type="checkbox" id="isFeatured" name="isFeatured" <%= product.isFeatured ? 'checked' : '' %> >
+            </div>
+
+            <button type="submit" class="btn">Update Product</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- views/tracking.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/trackingOrder.css">
+    <title>Shipment Tracking</title>
+</head>
+
+<body>
+    <%- include('partials/nav_bar') %>
+    <div class="container">
+        <h1>Shipment Tracking</h1>
+
+        <div class="tracking-form">
+            <div class="input-group">
+                <label for="tracking-input">Enter Waybill Number or Reference ID:</label>
+                <input type="text" id="tracking-input" placeholder="Enter tracking number...">
+            </div>
+            <button onclick="trackShipment()">Track Shipment</button>
+        </div>
+
+        <div class="error-message" id="error-message"></div>
+
+        <div class="tracking-results" id="tracking-results">
+            <!-- Results will be populated here -->
+        </div>
+    </div>
+    <script src="/js/trackingOrder.js"></script>
+    <%-include('partials/footer') %>
+</body>
+
+</html>

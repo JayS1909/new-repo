@@ -1,0 +1,110 @@
+/* styles.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1c1f26;
+    margin: 0;
+    padding: 0;
+    color: #f0f0f0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #ffd700; /* Bright color for emphasis */
+}
+
+.orders-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.order-card {
+    background-color: #2b2f3a;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-header h2 {
+    font-size: 24px;
+    color: #ffd700; /* Highlight order ID */
+}
+
+.toggle-button {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.line-items {
+    display: none; /* Hidden by default */
+}
+
+.line-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.line-item-header {
+    font-weight: bold;
+}
+
+.totals-row {
+    background-color: #2a2d37;
+    font-weight: bold;
+}
+
+.loading-spinner {
+    display: none; /* Hidden by default */
+}
+
+.order-details {
+    margin-top: 10px; 
+    color: #f0f0f0; 
+    font-size: 14px; 
+    line-height: 1.5; 
+}
+
+.refund-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.refund-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.refund-button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+@media screen and (max-width: 768px) {
+   /* Responsive styles */
+   .order-card {
+       padding: 10px; /* Adjust padding for smaller screens */
+   }
+
+   .line-item {
+       flex-direction: column; /* Stack line items vertically on small screens */
+   }
+}

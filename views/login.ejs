@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <script
+        id="otpless-sdk"
+        src="https://otpless.com/v4/headless.js"
+        data-appid="<%= otplessAppId %>"
+    ></script>
+</head>
+<body>
+    <div>
+        <%- include('partials/nav_bar') %>
+    </div>
+    
+    <div class="container">
+        <form id="login-form" action="/users/login" method="POST" onsubmit="submitOtp(event)">
+            <!-- Error Message -->
+           
+    
+            <!-- Login Heading -->
+             <div id="head">
+                <h2>LOGIN WITH OTP</h2>
+                <p class="p-text">SELECT LOGIN METHOD</p>
+             </div>
+            
+    
+            <!-- Method Selection (Email or Phone Number) -->
+            <div class="method-selection" id="method-selection">
+                <button type="button" id="email-button" onclick="selectMethod('email')" class="active">EMAIL</button>
+                <button type="button" id="phone-button" onclick="selectMethod('phoneNumber')">PHONE NUMBER</button>
+            </div>
+    
+            <!-- Hidden field to store login type (email or phone number) -->
+            <input type="hidden" id="loginType" name="loginType" value="email">
+    
+            <!-- Email Input -->
+            <div id="email-input" class="input-group" style="display: flex;">
+                <input type="email" id="email" name="email" placeholder="Email Address" onkeypress="handleKeyPress(event)">   
+            </div>
+            <p id="email-error" style="color: red; display: none; margin-top: 0px;"></p>
+            <!-- Phone Number Input (Initially hidden) -->
+            <div id="mobile-input" class="input-group" style="display: none;">
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" onkeypress="handleKeyPress(event)">  
+            </div>  
+            <p id="phone-error" style="color: red; display: none; margin-top: 0px;" ></p>
+    
+            <!-- Button to Request OTP -->
+            <button type="button" id="requestbtn" onclick="requestOtp()">Request OTP</button>
+            
+            <!-- OTP Input (Initially hidden) -->
+            <div id="otp-input" class="otp-input" style="display: none;">
+                <h2>PLEASE ENTER OTP FOR VERIFICATION</h2>
+                <p id="verification-message"></p>
+                <p id="display-contact"></p>
+                <input type="text" id="otp1" maxlength="1" inputmode="numeric" onkeypress="allowNumbersOnly(event)" oninput="moveToNext(this, 'otp2')">
+                <input type="text" id="otp2" maxlength="1" inputmode="numeric" onkeypress="allowNumbersOnly(event)" oninput="moveToNext(this, 'otp3')" onkeydown="moveToPrev(this, 'otp1')">
+                <input type="text" id="otp3" maxlength="1" inputmode="numeric" onkeypress="allowNumbersOnly(event)" oninput="moveToNext(this, 'otp4')" onkeydown="moveToPrev(this, 'otp2')">
+                <input type="text" id="otp4" maxlength="1" inputmode="numeric" onkeypress="allowNumbersOnly(event)" oninput="moveToNext(this, 'otp5')" onkeydown="moveToPrev(this, 'otp3')">
+                <input type="text" id="otp5" maxlength="1" inputmode="numeric" onkeypress="allowNumbersOnly(event)" oninput="moveToNext(this, 'otp6')" onkeydown="moveToPrev(this, 'otp4')">
+                <input type="text" id="otp6" maxlength="1" inputmode="numeric" onkeypress="allowNumbersOnly(event)" oninput="submitOtp(event)" onkeydown="moveToPrev(this, 'otp5')">
+                <!-- Resend OTP Button (Initially hidden) -->
+                <div id="error-message" style="color: red; display: none;"></div>
+                <p id="resend-timer" style="display: none;">Didn't receive the OTP? Resend in <span style = "font-size:14px ;"id="timer">01:00</span> seconds.</p>
+
+                
+                <button type="button" id="resend-otp-button" onclick="resendOtp()" style="display: none;">Resend OTP</button>
+            </div>
+            <input type="hidden" id="otp" name="otp" value="">
+            <!-- Submit Button (Initially hidden) -->
+            <% if (typeof error !== 'undefined') { %> 
+                <p class="error"><%= error %></p>
+            <% } %> 
+            <button type="submit" id="submit-button" style="display: none;" onclick="submitOtp(event)">Verify to proceed</button>
+        </form>
+    </div>
+    <footer>
+        <%- include('partials/footer') %>
+    </footer>
+    
+    <script src="/js/login.js"></script>
+</body>
+</html>
+
+
+
+

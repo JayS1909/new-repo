@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/productDetails.css">
+    <!-- <link rel="stylesheet" href="/css/cards.css"> -->
+    <title><%= product.productName %></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+    </style>
+</head>
+<body>
+    <%- include('partials/nav_bar') %>
+
+    <div class="product-section">
+        <!-- Product Images Section -->
+        <div class="product-images">
+            <div class="image-main" id="main-image-container">
+                <img src="<%= product.images[0]%>"alt="Full Body" id="main-image">
+            </div>
+            <div class="below-images">
+                <%  product.images.forEach((image, index) => { %>
+                    <div class="image" onmouseover="changeMainImage('<%= image %>')" onmouseout="resetMainImage()">
+                        <img src="<%= image %>" alt="Image <%= index+1 %>" class="hover-effect">
+                        <span class="tooltip-text">Image <%= index + 1 %> - 100% Cotton</span>
+                    </div>
+              <%}) %>
+            </div>
+        </div>
+    
+        <!-- Product Details Section -->
+        <div class="product-details">
+            <h2><%= product.productName %></h2>
+            <!-- <div class="share">
+                <span class="share-icon"><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+                <a class="social-link" href="https://wa.me/YOUR_PHONE_NUMBER" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a class="social-link" href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a class="social-link" href="https://www.instagram.com/_joshuaward/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div> -->
+            <hr>
+            <div class="price-section">
+                <% if (product.originalPrice > product.discountedPrice) { %>
+                    <span class="original-price">
+                        <span class="original-price-label">MRP: </span>
+                        <strike>Rs. <%= product.originalPrice %></strike>
+                    </span>
+                    <span class="discounted-price">Rs. <%= product.discountedPrice %> </span>
+                <% } else { %>
+                    <span class="original-price">
+                        <span  class="original-price-label">MRP:  </span>
+                        <a> Rs. <%= product.originalPrice %> </a> 
+                    </span>
+                <% } %>
+                <span class="tax-inclusive"> (inclusive of all taxes.) </span>
+                
+            </div>
+    
+            <div class="size-options">
+                <h3>Select Size: </h3>
+                <div class="size-buttons">
+                    <% Array.from(product.sizes.entries()).forEach(([size, quantity]) => { %>
+                        <% if (quantity > 0) { %>
+                            <button class="close" data-size = "<%= size %>">
+                                <%= size %>
+                            </button>
+                        <% } else { %>
+                            <button class="close out-of-stock" disabled>
+                                <%= size %>
+                            </button>
+                        <% } %>
+                    <% }) %>
+                </div>
+                
+            </div>
+    
+            <div class="AddToCartButton" disabled>
+                <button class="shimmer-button" id="shimmerButton">
+                    <span class="button-text">Add to Cart</span>
+                    <span class="shimmer" id="shimmer"></span>
+                </button>
+            </div>
+            <br>
+            <div class="accordion-horizontal">
+                <button class="accordion-toggle" data-target="details">Details</button>
+                <button class="accordion-toggle" data-target="description">Description</button>
+                <button class="accordion-toggle" data-target="care-instructions">Care Instructions</button>
+                <button class="accordion-toggle" data-target="size-chart">Size Chart</button>
+            </div>
+            <div id="details" class="accordion-content active">
+                <ul class="details">
+                    <li><i class="fa fa-info-circle"></i> Material: <%= product.details.get('material') %></li>
+                    <li><i class="fa fa-tshirt"></i> Size: XS, S, M, L, XL</li>
+                    <li><i class="fa fa-palette"></i> Color: <%= product.details.get('color')%></li>
+                    <li><i class="fa fa-cut"></i> Fit: <%= product.details.get('fit') %></li>
+                    <li><i class="fa fa-square"></i> Pattern: <%= product.details.get('pattern') %></li>
+                </ul>
+            </div>
+            <div id="description" class="accordion-content">
+                <div class="section">
+                    <h3>Features:</h3>
+                    <ul>
+                        <li><%= product.description.features %></li>
+                    </ul>
+                </div>
+            
+                <div class="section">
+                    <h3>What's on Print:</h3>
+                    <ul>
+                        <li><strong>Front:</strong> <%= product.description.frontPrint %></li>
+                        <li><strong>Back:</strong> <%= product.description.backPrint %></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="care-instructions" class="accordion-content">
+                <ul>
+                    <li><i class="fas fa-water"></i> Machine wash cold with like colors.</li>
+                    <li><i class="fas fa-ban"></i> Do not bleach.</li>
+                    <li><i class="fas fa-tshirt"></i> Tumble dry low.</li>
+                    <li><i class="fas fa-exclamation-circle"></i> Do not iron on print.</li>
+                    <li><i class="fas fa-times-circle"></i> Do not dry clean.</li>
+                </ul>
+            </div>
+            <div id="size-chart" class="accordion-content">
+                <h3>Size Chart:</h3>
+                <img src="/images/Size Chart No-T (2)_page-0001.jpg" alt="size chart image" class="size-chart-image">
+                <p>Refer to the size chart for accurate fitting.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="delivery-payment-info">
+        <div class="delivery-info" id="fastDelivery">
+            <i class="fas fa-truck"></i>
+            <span class="short-description">Fast Delivery</span>
+            <span class="full-description">Delivery in 4-6 days</span>
+        </div>
+    
+        <div class="delivery-info" id="freeShipping">
+            <i class="fas fa-shipping-fast"></i>
+            <span class="short-description">Free Shipping</span>
+            <span class="full-description">Free shipping on all orders</span>
+        </div>
+    
+        <div class="delivery-info" id="securePayments">
+            <i class="fas fa-lock"></i>
+            <span class="short-description">Secure Payments</span>
+            <span class="full-description">All payments are secure</span>
+        </div>
+    
+        <div class="delivery-info" id="hassleFreeReturns">
+            <i class="fas fa-undo"></i>
+            <span class="short-description">Hassle-Free Returns</span>
+            <span class="full-description">Easy returns and exchanges</span>
+        </div>
+    </div>
+    
+    <div class="related-products-section">
+        <h2 class="section-title">You May Also Like</h2>
+        <div class="cards-container">
+            <% relatedProducts.forEach((relatedProducts, index) => { %>
+                <a href="/product/<%= relatedProducts._id %>">
+                    <div class="card" id="interactive-card<%=index + 1 %>">
+                        <img src="<%= relatedProducts.images[0]%>" class="card-image active" id="default<%= index + 1 %> " alt="Default image">
+                        <img src="<%= relatedProducts.images[1]%>" class="card-image" id = "image<%= index + 1 %>_1" alt="Product Image 1">
+                        <img src="<%= relatedProducts.images[2]%>" class="card-image" id="image<%= index + 1 %>_2" alt="Product Image 2">
+                        <img src="<%= relatedProducts.images[3]%>" class="card-image" id="image<%= index+1 %>_3" alt="Product Image 3">
+                        <div class="dot-navigation">
+                            <span class="dot" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                        </div>
+                        <div class="text-overlay">
+                            <h3 style="text-decoration: underline;"><%= relatedProducts.productName %></h3>
+                            <div class="prices">
+                                <% if (relatedProducts.discountedPercentage > 0) { %>
+                                    <span class="current-price">₹ <%= relatedProducts.discountedPrice %></span>
+                                    <span class="original-price">₹ <%= relatedProducts.originalPrice %></span>
+                                    <span class="discount">₹ <%= relatedProducts.originalPrice - relatedProducts.discountedPrice %> OFF</span>
+                                <% } else { %>
+                                    <span class="current-price">₹ <%= relatedProducts.originalPrice %></span>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </a>   
+           <% }); %> 
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+     <script> 
+        var originalImageSrc = "<%= product.images[0] %>";
+        const productId = "<%= product._id %>";
+    </script>
+    <script src="/js/productDetails.js"></script>
+    <script src="/js/cards.js"></script>
+</body>
+</html>

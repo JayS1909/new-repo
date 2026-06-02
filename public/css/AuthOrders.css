@@ -1,0 +1,755 @@
+/* General Body Styles */
+body {
+    background-color: black;
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
+    /* Ensure consistent spacing */
+    display: flex;
+    flex-direction: column;
+    /* Make the body a column flex container */
+    min-height: 100vh;
+    /* Ensure the body takes the full viewport height */
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Container Styling for Order List */
+.order-list {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px;
+}
+
+/* Order Row Styling */
+/* .order-row {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.order-row:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+} */
+.order-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #444;
+}
+
+.order-actions .button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-actions .button:hover {
+    background-color: #0056b3;
+}
+
+.order-actions .button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #007bff;
+}
+
+.order-row img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.order-info {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.order-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.order-date {
+    font-size: 15px;
+    color: white;
+    text-align: right;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #1e1e1e;
+    color: white;
+    width: 400px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    position: relative;
+    text-align: center;
+}
+
+.modal-content h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Close button in modal */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Button styling */
+.button {
+    padding: 12px 24px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: grey;
+    transform: translateY(-2px);
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px white;
+}
+
+/* Order Card Styling */
+.order-card {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Order Header Styling */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Order Items Container */
+.order-items {
+    padding-top: 10px;
+}
+
+/* Individual Order Row Styling (unchanged) */
+.order-row {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.order-row:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.order-size {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* No Orders Section */
+.no-orders {
+    display: flex;
+    flex-direction: column;
+    /* Stack the children (image, title, message, button) vertically */
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Center horizontally */
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    /* Center horizontally within its parent */
+    height: 100%;
+    /* Allow it to fill the height of its container */
+    padding: 20px;
+}
+
+/* Ensuring the parent .main-content centers content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    /* Stack children */
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Center horizontally */
+    flex: 1;
+    /* Take all available space */
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 60px;
+    padding: 20px;
+}
+footer {
+    margin-top: 20px; /* Add spacing above the footer */
+    padding: 10px;
+    border-top: 1px solid #444; /* Ensure the top line of the footer is visible */
+}
+
+.no-orders-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffcc00;
+    /* Bright and cheerful color */
+}
+
+.no-orders-image {
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.no-orders-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    /* Complementary to dark background */
+    line-height: 1.6;
+}
+
+.no-orders .button {
+    background-color: #4caf50;
+    /* Bright green for a positive vibe */
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.no-orders .button:hover {
+    background-color: #388e3c;
+    /* Darker shade for hover */
+    transform: translateY(-2px);
+}
+
+.no-orders-image {
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+/* Large Desktops (992px - 1199px) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .order-list {
+        max-width: 700px;
+    }
+
+    .order-card {
+        padding: 20px;
+    }
+
+    .modal-content {
+        width: 70%;
+    }
+
+    .order-date {
+        font-size: 15px;
+        color: white;
+    }
+}
+
+/* Medium Desktops (768px - 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .order-list {
+        padding: 10px;
+    }
+
+    .order-card {
+        padding: 15px;
+    }
+
+    .modal-content {
+        width: 85%;
+    }
+
+    .order-date {
+        font-size: 15px;
+        color: white;
+    }
+}
+
+/* Tablets (576px - 767px) */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .order-card {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .order-row img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .order-header {
+        font-size: 12px;
+    }
+
+    .order-date {
+        font-size: 12px;
+        color: white;
+    }
+}
+
+/* Small Tablets (450px - 576px) */
+@media only screen and (min-width: 450px) and (max-width: 576px) {
+    .order-list {
+        padding: 5px;
+    }
+
+    .order-card {
+        padding: 8px;
+    }
+
+    .order-row img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .order-header {
+        font-size: 10px;
+    }
+
+    .order-date {
+        font-size: 10px;
+        color: white;
+    }
+}
+
+/* Large Mobiles (350px - 449px) */
+@media only screen and (min-width: 370px) and (max-width: 449px) {
+    .order-list {
+        padding: 5px;
+    }
+
+    .order-card {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .order-row img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .order-header {
+        font-size: 8px;
+    }
+
+    .order-header {
+        font-size: 10px;
+    }
+
+    .order-date {
+        font-size: 10px;
+        color: white;
+    }
+}
+
+/* Small Mobiles (280px - 349px) */
+@media only screen and (min-width: 280px) and (max-width: 370px) {
+    .order-list {
+        padding: 0;
+    }
+
+    .order-card {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .order-row img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .modal-content {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .order-header {
+        font-size: 10px;
+    }
+
+    .order-date {
+        font-size: 10px;
+        color: white;
+    }
+}
+
+@media (max-width: 576px) {
+    .order-header {
+        display: block;
+        text-align: left;
+        font-size: 12px;
+    }
+
+    .order-header div {
+        margin: 5px 0;
+        /* Add spacing between rows */
+    }
+
+    .order-header {
+        font-size: 10px;
+    }
+
+    .order-date {
+        font-size: 10px;
+        color: white;
+    }
+}
+
+/* Small Tablets (450px - 576px) */
+@media only screen and (min-width: 450px) and (max-width: 576px) {
+    .order-info {
+        font-size: 10px;
+    }
+
+    .order-size,
+    .order-name {
+        font-size: 8px;
+    }
+
+    .order-actions .button {
+        font-size: 10px;
+        padding: 5px 15px;
+    }
+
+    .order-header {
+        font-size: 10px;
+    }
+
+    .order-date {
+        font-size: 10px;
+        color: white;
+    }
+}
+
+/* Large Mobiles (350px - 449px) */
+@media only screen and (min-width: 370px) and (max-width: 449px) {
+    .order-info {
+        font-size: 8px;
+    }
+
+    .order-size,
+    .order-name {
+        font-size: 7px;
+    }
+
+    .order-actions .button {
+        font-size: 8px;
+        padding: 5px 10px;
+    }
+
+    .order-header {
+        font-size: 8px;
+    }
+
+    .order-date {
+        font-size: 8px;
+        color: white;
+    }
+}
+
+/* Small Mobiles (280px - 349px) */
+@media only screen and (min-width: 280px) and (max-width: 370px) {
+    .order-info {
+        font-size: 7px;
+    }
+
+    .order-size,
+    .order-name {
+        font-size: 6px;
+    }
+
+    .order-actions .button {
+        font-size: 7px;
+        padding: 4px 8px;
+    }
+
+    .order-header {
+        font-size: 7px;
+    }
+
+    .order-date {
+        font-size: 7px;
+        color: white;
+    }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 349px) {
+    .order-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        /* Add spacing between items */
+        padding: 5px;
+    }
+
+    .order-row img {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        /* Maintain a consistent gap between image and text */
+    }
+
+    .order-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-grow: 1;
+        padding-left: 10px;
+        /* Utilize the extra left space */
+    }
+
+    .order-name {
+        font-size: 8px;
+        font-weight: bold;
+        margin-bottom: 2px;
+        /* Add spacing between product name and quantity */
+    }
+
+    .order-size {
+        font-size: 7px;
+        color: #aaa;
+        margin-bottom: 2px;
+        /* Add spacing between quantity and size */
+    }
+
+    .order-actions {
+        margin-top: 5px;
+    }
+
+    .order-actions .button {
+        font-size: 7px;
+        padding: 4px 8px;
+    }
+
+    .order-date {
+        font-size: 7px;
+        color: white;
+    }
+
+    .no-orders {
+        font-size: 1px;
+    }
+}
+
+/* Default Styles */
+.no-orders {
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.no-orders-image {
+    max-width: 300px;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: max-width 0.3s ease;
+}
+
+.no-orders-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.no-orders-message {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.no-orders .button {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect */
+.no-orders .button:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+}
+
+/* Large Tablets and Desktops (450px - 576px) */
+@media only screen and (min-width: 450px) and (max-width: 576px) {
+    .no-orders-image {
+        max-width: 250px;
+    }
+
+    .no-orders-title {
+        font-size: 20px;
+    }
+
+    .no-orders-message {
+        font-size: 14px;
+    }
+
+    .no-orders .button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* Large Mobiles (350px - 449px) */
+@media only screen and (min-width: 350px) and (max-width: 449px) {
+    .no-orders-image {
+        max-width: 200px;
+    }
+
+    .no-orders-title {
+        font-size: 18px;
+    }
+
+    .no-orders-message {
+        font-size: 12px;
+    }
+
+    .no-orders .button {
+        font-size: 12px;
+        padding: 8px 18px;
+    }
+}
+
+/* Small Mobiles (280px - 349px) */
+@media only screen and (min-width: 280px) and (max-width: 349px) {
+    .no-orders {
+        padding: 10px;
+    }
+
+    .no-orders-image {
+        max-width: 150px;
+    }
+
+    .no-orders-title {
+        font-size: 16px;
+    }
+
+    .no-orders-message {
+        font-size: 10px;
+    }
+
+    .no-orders .button {
+        font-size: 10px;
+        padding: 6px 16px;
+    }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 576px) {
+    .no-orders {
+        margin: 40px auto;
+        /* Reduced margin */
+    }
+}
+
+/* Large Mobiles (350px - 449px) */
+@media only screen and (min-width: 350px) and (max-width: 449px) {
+    .no-orders {
+        margin: 30px auto;
+        /* Further reduced margin */
+    }
+}
+
+/* Small Mobiles (280px - 349px) */
+@media only screen and (min-width: 280px) and (max-width: 349px) {
+    .no-orders {
+        margin: 10px auto;
+        /* Minimal margin for smallest frames */
+        padding: 1px;
+        /* Adjust padding for a tighter layout */
+    }
+
+    .no-orders-image {
+        margin-bottom: 15px;
+        /* Compact spacing below image */
+    }
+}

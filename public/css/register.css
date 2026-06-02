@@ -1,0 +1,411 @@
+/* General Body Styles */
+* Loader Styles */ .loader {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    /* Increased width for better spacing */
+    height: 10px;
+}
+
+.loader div {
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    /* White color for visibility on black background */
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    transform: translateY(-50%);
+    /* Center the dots */
+}
+
+/* Loader Styles */
+/* Reset any inherited transformations or rotations */
+.loader {
+    transform: none !important;
+    /* Remove any transform applied from the parent or container */
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 10px;
+}
+
+.loader div {
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    transform: translateY(-50%);
+    /* Ensure no unwanted transformations */
+}
+
+/* Dot 1 */
+/* Reset any inherited transformations or rotations */
+.loader {
+    transform: none !important;
+    /* Remove any transform applied from the parent or container */
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 10px;
+}
+
+.loader div {
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    transform: translateY(-50%)
+        /* Ensure no unwanted transformations */
+}
+
+/* Dot 1 */
+.loader div:nth-child(1) {
+    left: 0;
+    animation: pulse1 0.6s infinite;
+}
+
+/* Dot 2 */
+.loader div:nth-child(2) {
+    left: 12px;
+    animation: pulse2 0.6s infinite;
+}
+
+/* Dot 3 */
+.loader div:nth-child(3) {
+    left: 24px;
+    animation: pulse3 0.6s infinite;
+}
+
+/* Dot 4 */
+.loader div:nth-child(4) {
+    left: 36px;
+    animation: pulse4 0.6s infinite;
+}
+
+/* Keyframes for the pulsing effect */
+@keyframes pulse1 {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scale(0);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes pulse2 {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scale(0);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes pulse3 {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scale(0);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes pulse4 {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scale(0);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+
+body {
+    /* font-family: "Livvic", sans-serif; */
+    background-color: black;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    padding: 20px;
+    /* Added padding to ensure it doesn't touch screen edges */
+    box-sizing: border-box;
+    /* To include padding in width calculation */
+}
+
+/* font start */
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+span {
+    font-family: 'Livvic', sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#register-email-section {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#email-address {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#register-phone-section {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#phone-number {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+.input-group {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#full-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+
+/* Container Styling */
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    flex-direction: row;
+    box-sizing: border-box;
+    /* Ensures no overflow due to padding */
+    padding: 20px;
+    /* Add padding inside container */
+}
+
+/* Left Section (Form) */
+#left-section {
+    padding: 40px;
+    flex: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-right: 20px;
+    /* Ensure space between the form and the right section */
+}
+
+#left-section h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    padding: 12px;
+    font-size: 16px;
+    /* font-family: "Livvic", sans-serif; */
+    width: 100%;
+    background-color: #1e1e1e;
+    border: none;
+    border-bottom: 2px solid #4a4a4a;
+    color: #fff;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Placeholder Styling */
+.input-group input::placeholder {
+    color: #888;
+}
+
+/* Input Focus State */
+.input-group input:focus {
+    outline: none;
+    border-bottom-color: white;
+    background-color: #2b2b2b;
+}
+
+/* Submit Button */
+button {
+    padding: 12px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: grey;
+    transform: translateY(-2px);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px white;
+}
+
+/* Right Section (Image) */
+#right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #1e1e1e;
+    box-sizing: border-box;
+}
+
+#right-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image scales correctly and doesn't get cut */
+}
+
+/* Media Queries */
+
+/* Mobile Devices: Up to 480px */
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #left-section {
+        padding: 20px;
+        text-align: center;
+    }
+
+    #right-section {
+        display: none;
+    }
+
+    button {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+/* Tablets: 481px to 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #left-section {
+        padding: 20px;
+        text-align: center;
+    }
+
+    #right-section {
+        display: none;
+    }
+
+    button {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+/* Small Laptops: 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 900px;
+        width: 100%;
+    }
+
+    #left-section {
+        padding: 30px;
+    }
+
+    #right-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ensures the image fits perfectly without being cut */
+    }
+}
+
+/* Large Devices: Above 1024px */
+@media (min-width: 1025px) {
+    .container {
+        max-width: 1000px;
+    }
+
+    #left-section {
+        padding: 40px;
+    }
+
+    #right-section img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Image will maintain aspect ratio and fit within the container */
+    }
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.input-group input.error {
+    border-color: red;
+}

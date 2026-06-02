@@ -1,0 +1,793 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    background-color: black;
+}
+
+  .video-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    margin-top: 5%;
+    overflow: hidden;
+    background-color: black; /* Fills any extra space */
+  }
+  
+  video {
+    max-width: 100%; /* Scale to fit width */
+    max-height: 100%; /* Scale to fit height */
+    width: 100%; /* Keep original aspect ratio */
+    height: auto; /* Keep original aspect ratio */
+    display: none; /* Hide by default */
+  }
+  
+  /* Show video for screens larger than 576px */
+  @media (min-width: 576px) {
+    .video-large {
+      display: block;
+    }
+  }
+  
+  /* Show video for screens smaller than 576px */
+  @media (max-width: 575px) {
+    .video-small {
+      display: block;
+    }
+  }
+/* 
+MEN 
+SECTION
+CSS
+*/
+.men-products {
+    text-align: left;
+    color: white;
+    margin-left: 60px;
+    background-color: black;
+    padding: 0; /* You can adjust padding if needed */
+    border: none;
+    margin-top: 70px; /* Add margin-top to create space above the section */
+}
+
+.mens {
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 0; /* You can adjust padding if needed */
+    border: none; 
+}
+
+
+/* VIEW
+ALL
+BUTTON 
+CSS
+*/
+.moreButton {
+    display: flex;
+    justify-content: center; /* Center child elements horizontally */
+    align-items: center; /* Center child elements vertically */
+    text-align: center;
+    margin: 0 auto; /* Center the button container */
+    margin-bottom: 50px; /* Maintain bottom margin */
+    margin-top: 0; /* Adjust margin as needed */
+    gap: 20px; /* Space between elements */
+    width: 100%; /* Ensure it takes full width */
+    position: relative; /* Position relative for absolute children if needed */
+}
+
+.shimmer-button {
+    position: relative;
+    text-align: center;
+    background: black;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid white; /* Black border */
+    border-radius: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.shimmer-button .shimmer {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: skewX(-25deg);
+    transition: all 0.5s ease;
+}
+
+.shimmer-button:hover .shimmer {
+    left: 100%;
+    transition: all 0.5s ease;
+}
+
+/* 
+CSS FOR
+MARQUEE
+CONTENT
+*/
+
+.marquee {
+    width: 100%;
+    height: 45px;
+    overflow: hidden;
+    background-color: white; /* Background color of the text band */
+    white-space: nowrap;
+    position: relative;
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    color: black; /* Text color */
+    font-size: 16px; /* Smaller text size */
+    animation: marquee 25s linear infinite;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* 
+WOMEN
+SECTION
+CSS
+*/
+.women-products {
+    text-align: left;
+    color: white;
+    margin-left: 60px;
+    background-color: black;
+    padding: 0; /* You can adjust padding if needed */
+    border: none;
+    margin-top: 70px; /* Add margin-top to create space above the section */
+}
+
+.womens {
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 0; /* You can adjust padding if needed */
+    border: none; 
+}
+
+/* 
+CSS
+FOR 
+SLIDER
+INFORMATION 
+PAGE
+*/
+
+.informationpage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+.slider {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 2; /* Ensure the arrows are above other content */
+    font-size: 30px; /* Increase font size */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+
+
+
+/* new */
+
+
+.marquee {
+    width: 100%;
+    height: 45px;
+    overflow: hidden;
+    background-color: white; /* Background color of the text band */
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.marquee-content {
+    display: flex; /* Aligns text in a row */
+    white-space: nowrap; /* Prevents wrapping */
+    animation: marquee 110s linear infinite;
+}
+
+.marquee-content span {
+    display: inline-block;
+    color: black; /* Text color */
+    font-size: 16px; /* Text size */
+    margin-right: 30px; /* Gap between words */
+}
+
+/* Keyframes for continuous scrolling */
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .marquee {
+        height: 35px; /* Reduce height for smaller devices */
+    }
+    .marquee-content span {
+        font-size: clamp(8px, 4vw, 14px); /* Smaller font for compact devices */
+        margin-right: clamp(8px, 4vw, 20px); /* Adjust spacing */
+    }
+}
+
+
+
+
+/* Blog Section */
+/* Base Styles */
+.blog {
+    margin-bottom: 60px;
+    background-color: black;
+}
+
+.blog .title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.blog .title h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: white;
+}
+
+.blog .title p {
+    font-size: 1.2em;
+    color: #b5b5b5;
+}
+
+.portfolio__container {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    overflow-x: hidden;
+}
+
+.portfolio__grid {
+    display: grid;
+    gap: 0; /* Set gap to 0 to remove space between cards */
+    grid-template-columns: repeat(3, 1fr); /* Default: 3 cards in a row */
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Card Styles */
+.portfolio__card {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio__card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+.portfolio__card:hover img {
+    filter: brightness(0.6); /* Darken the image on hover */
+}
+
+.portfolio__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio__card:hover .portfolio__content {
+    opacity: 1; /* Show text on hover */
+}
+
+.portfolio__card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    cursor: pointer;
+}
+
+.portfolio__content p {
+    margin: 0; /* Keep margin as is */
+    background-color: transparent; /* Remove background color */
+    padding: 0; /* Remove padding */
+    display: inline; /* Change to inline to keep it as text */
+    font-size: 1em; /* Keep font size */
+    color: #fff; /* Ensure text color is visible */
+    cursor: pointer; /* Change cursor to pointer for interactivity */
+}
+
+
+/* Responsive Styles */
+@media only screen and (min-width: 300px) and (max-width: 349px) {
+    .portfolio__grid {
+        grid-template-columns: repeat(3, 1fr);/* 1 card in a row */
+    }
+
+    .blog .title h2 {
+        font-size: 1.8em;
+    }
+
+    .blog .title p {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 449px) {
+    .portfolio__grid {
+        grid-template-columns: repeat(3, 1fr); /* 1 card in a row */
+    }
+
+   
+}
+
+@media only screen and (min-width: 450px) and (max-width: 576px) {
+    .portfolio__grid {
+        grid-template-columns: repeat(3, 1fr); /* 2 cards in a row */
+    }
+
+  
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .portfolio__grid {
+        grid-template-columns: repeat(3, 1fr); /* 2 cards in a row */
+    }
+
+   
+}
+
+@media only screen and (min-width: 768px) {
+    .portfolio__grid {
+        grid-template-columns: repeat(3, 1fr); /* Default: 3 cards in a row */
+    }
+}
+
+/* Brand Section */
+/* Brand Section */
+/* Brand Section */
+/* Brand Section */
+.brand {
+    padding: 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Split screen layout */
+.split-screen {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: row; /* Default: Row layout for larger screens */
+}
+
+/* Image side - 65% width */
+.image-side {
+    flex: 0 0 65%; /* Default: 65% of the width */
+    position: relative;
+    overflow: hidden;
+    height: 100%; /* Full height */
+}
+
+/* Image sequence */
+.image-sequence {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Image styling */
+.image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    max-width: none;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.image.active {
+    opacity: 1;
+}
+
+/* Dark Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+/* Text side - 35% width */
+.text-side {
+    flex: 0 0 35%; /* Default: 35% of the width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    height: 100%; /* Full height */
+    font-family: 'Inter',sans-serif;
+}
+.text-side p{
+    font-weight: 200;
+}
+
+/* Text Box around the text */
+.text-box {
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+}
+
+/* Banner Text */
+.banner-text {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.banner-text h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 20px;
+    text-shadow: 2px 2px 4px rgba(129, 129, 129, 0.7);
+}
+
+.banner-text h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 15px;
+    text-shadow: 1.5px 1.5px 3.5px rgba(129, 129, 129, 0.7);
+}
+
+.banner-text p {
+    font-size: 1em;
+    line-height: 1.4;
+    margin: 10px;
+    text-shadow: 1px 1px 3px rgba(129, 129, 129, 0.7);
+}
+
+/* Media Queries for Specific Screen Sizes */
+
+/* Small screens (300px to 349px) */
+@media only screen and (min-width: 300px) and (max-width: 349px) {
+    .brand{
+        margin-top: 30px;
+        margin-bottom: 0px;
+    }
+    .split-screen {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .image-side {
+        flex: 0 0 50%; /* Image takes 50% height */
+        height: 50vh;
+    }
+
+    .text-side {
+        flex: 0 0 50%; /* Text takes 50% of the screen height */
+        padding: 0;
+    }
+
+    .text-box {
+        width: 90%; /* Make text box smaller on mobile */
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .banner-text h1 {
+        font-size: 1.2em;
+    }
+
+    .banner-text h2 {
+        font-size: 1em;
+    }
+
+    .banner-text p {
+        font-size: 0.8em;
+    }
+}
+
+/* Medium screens (350px to 449px) */
+@media only screen and (min-width: 350px) and (max-width: 449px) {
+    .brand{
+        margin-top: 30px;
+        margin-bottom: 0px;
+    }
+    .split-screen {
+        flex-direction: column; /* Ensure stack for medium screens */
+    }
+
+    .image-side {
+        flex: 0 0 50%; /* Image takes 50% height */
+        height: 55vh;
+    }
+
+    .text-side {
+        flex: 0 0 50%; /* Text takes 50% of the screen height */
+        padding: 10px;
+    }
+
+    .text-box {
+        width: 85%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .banner-text h1 {
+        font-size: 1.4em;
+        margin: 8px;
+    }
+
+    .banner-text h2 {
+        font-size: 1.1em;
+        margin: 5;
+    }
+
+    .banner-text p {
+        font-size: 0.9em;
+        margin: 3px;
+    }
+}
+/* Larger mobile screens (450px to 576px) */
+@media only screen and (min-width: 450px) and (max-width: 576px) {
+    .brand{
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .split-screen {
+        flex-direction: column; /* Ensure stack for medium screens */
+    }
+
+    .image-side {
+        flex: 0 0 50%; /* Image takes 50% height */
+        height: 55vh;
+    }
+
+    .text-side {
+        flex: 0 0 50%; /* Text takes 50% of the screen height */
+        padding: 15px;
+    }
+
+    .text-box {
+        width: 85%;
+        max-width: 100%;
+    }
+
+    .banner-text h1 {
+        font-size: 1.4em;
+        margin: 10px;
+    }
+
+    .banner-text h2 {
+        font-size: 1.1em;
+        margin: 6px;
+    }
+
+    .banner-text p {
+        font-size: 0.9em;
+        margin: 6px;
+    }
+}
+/* Medium to large screens (576px to 767px) */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .brand{
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .split-screen {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .image-side {
+        flex: 0 0 50%; /* Image takes 50% height */
+        height: 65vh;
+    }
+
+    .text-side {
+        flex: 0 0 50%; /* Text takes 50% of the screen height */
+        padding: 25px;
+    }
+
+    .text-box {
+        width: 80%;
+        max-width: 100%;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8em;
+        margin: 10px;
+    }
+
+    .banner-text h2 {
+        font-size: 1.2em;
+        margin: 6px;
+    }
+
+    .banner-text p {
+        font-size: 1em;
+        margin: 6px;
+    }
+}
+/* Tablet screens (768px to 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .split-screen {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .image-side {
+        flex: 0 0 55%; /* Image takes 50% of the height */
+        height: 50vh; /* Adjust image height */
+    }
+
+    .text-side {
+        flex: 0 0 45%; /* Text takes 50% of the height */
+        padding: 30px;
+        height: 50vh; /* Adjust text height */
+    }
+
+    .text-box {
+        width: 80%;
+        max-width: 100%;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8em;
+        margin: 15px;
+    }
+
+    .banner-text h2 {
+        font-size: 1.2em;
+        margin: 10px;
+    }
+
+    .banner-text p {
+        font-size: 1em;
+        margin: 6px;
+    }
+}
+/* Small desktop screens (992px to 1199px) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    
+    .brand{
+        margin-bottom: -20px;
+    }
+    .split-screen {
+        flex-direction: row;
+    }
+
+    .image-side {
+        flex: 0 0 65%;
+        height: 80vh; /* Larger height for small desktops */
+    }
+
+    .text-side {
+        flex: 0 0 35%;
+       
+    }
+
+    .text-box {
+        width: 80%;
+        max-width: 500px;
+        margin-top: -150px;
+    }
+
+    .banner-text h1 {
+        font-size: 1.8em;
+        margin: 15px;
+    }
+
+    .banner-text h2 {
+        font-size: 1.2em;
+        margin: 10px;
+    }
+
+    .banner-text p {
+        font-size: 1em;
+        margin: 6px;
+    }
+}

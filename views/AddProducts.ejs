@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Product</title>
+    <link rel="stylesheet" href="/css/addProducts.css">
+</head>
+<body>
+    <header>
+        <h1>Add a New Product</h1>
+    </header>
+    <main>
+        <form action="/products/api/upload" method="POST" enctype="multipart/form-data">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="sku">SKU:</label>
+                    <input type="text" id="sku" name="sku" required>
+                </div>
+                <div class="form-group">
+                    <label for="variantId">Variant ID:</label>
+                    <input type="text" id="variantID" name="variantID" required>
+                </div>
+            </div>
+
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" name="productName" required>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="frontImage">Front Image:</label>
+                    <input type="file" id="frontImage" name="frontImage" required>
+                </div>
+                <div class="form-group">
+                    <label for="backImage">Back Image:</label>
+                    <input type="file" id="backImage" name="backImage" required>
+                </div>
+                <div class="form-group">
+                    <label for="rightImage">Right Image:</label>
+                    <input type="file" id="rightImage" name="rightImage" required>
+                </div>
+                <div class="form-group">
+                    <label for="leftImage">Left Image:</label>
+                    <input type="file" id="leftImage" name="leftImage" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="originalPrice">Original Price:</label>
+                    <input type="number" id="originalPrice" name="originalPrice" required>
+                </div>
+                <div class="form-group">
+                    <label for="discountedPercentage">Discount Percentage:</label>
+                    <input type="number" id="discountedPercentage" name="discountedPercentage">
+                </div>
+            </div>
+
+            <fieldset>
+                <legend>Size Quantities:</legend>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="sizeXS">Size XS:</label>
+                        <input type="number" id="sizeXS" name="sizes[XS]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sizeS">Size S:</label>
+                        <input type="number" id="sizeS" name="sizes[S]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sizeM">Size M:</label>
+                        <input type="number" id="sizeM" name="sizes[M]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sizeL">Size L:</label>
+                        <input type="number" id="sizeL" name="sizes[L]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sizeXL">Size XL:</label>
+                        <input type="number" id="sizeXL" name="sizes[XL]" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sizeXXL">Size XXL:</label>
+                        <input type="number" id="sizeXXL" name="sizes[XXL]" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Product Details:</legend>
+                <label for="detailMaterial">Material:</label>
+                <input type="text" id="detailMaterial" name="details[material]" required>
+
+                <label for="detailCare">Color:</label>
+                <input type="text" id="detailColor" name="details[color]" required>
+
+                <label for="detailFit">Fit:</label>
+                <input type="text" id="detailFit" name="details[fit]" required>
+
+                <label for="detailPattern">Pattern:</label>
+                <input type="text" id="detailPattern" name="details[pattern]" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Additional Details:</legend>
+                <label for="descriptionFrontPrint">Front Print:</label>
+                <input type="text" id="descriptionFrontPrint" name="descriptionFrontPrint">
+
+                <label for="descriptionBackPrint">Back Print:</label>
+                <input type="text" id="descriptionBackPrint" name="descriptionBackPrint">
+
+                <label for="features">Features (comma-separated):</label>
+                <input type="text" id="features" name="features">
+            </fieldset>
+
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+                <option value="unisex">Unisex</option>
+            </select>
+
+            <label for="isFeatured">
+                <input type="checkbox" id="isFeatured" name="isFeatured"> Mark as Featured
+            </label>
+
+            <button type="submit">Add Product</button>
+        </form>
+    </main>
+</body>
+</html>

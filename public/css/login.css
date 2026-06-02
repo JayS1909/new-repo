@@ -1,0 +1,821 @@
+/* General Body Styles */
+body {
+    /*font-family: "Livvic", sans-serif;*/
+    background-color: black;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 20px;
+
+}
+
+/* font start */
+.name {
+    font-family: 'Livvic', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+#email-button {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold 200;
+}
+
+#phone-button {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold 200;
+}
+
+#email-input {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#mobile-input {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#email {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#phoneNumber {
+    font-family: 'Inter', sans-serif;
+    font-weight: 200;
+}
+
+#requestbtn {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold 200;
+}
+
+/* font end */
+
+/* Container Styling */
+.container {
+    font-family: "Livvic", sans-serif;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    margin-top: 250px;
+    margin-bottom: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    /* border: 1px solid #ccc; */
+    color: white;
+    /* border-radius: 10px; */
+    /* background-color: rgba(0, 0, 0, 0.7);  */
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+
+
+/* Heading */
+#head h2 {
+    /*font-family: "Livvic", sans-serif;*/
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
+.p-text {
+    font-size: 14px;
+}
+
+/* Method Selection Buttons */
+/* Method Selection */
+.method-selection {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* Method Selection Buttons - Normal State */
+/* Method Selection Buttons - Normal State */
+/* Method Selection Buttons - Normal State (Transparent Background) */
+.method-selection button {
+    padding: 8px 6px;
+    /* Smaller padding for reduced button size */
+    background-color: transparent;
+    /* Transparent background */
+    color: white;
+    border: 1px solid #4E555B;
+    /* Optional: border to give button a visible shape */
+    border-radius: 18px;
+    /* Smaller rounded edges */
+    font-size: 12px;
+    /* Smaller font size */
+    cursor: pointer;
+    flex: 1;
+    margin: 0 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: none;
+    /* No shadow for a clean look */
+}
+
+/* Method Selection Buttons - Active State (White Background) */
+.method-selection button.active {
+    background-color: white !important;
+    /* White background when active */
+    color: black;
+    /* Black text color for contrast */
+    border: none;
+    /* Remove border when active */
+    box-shadow: none;
+    /* No shadow in active state */
+    border: none;
+}
+
+/* Method Selection Buttons - Hover State */
+.method-selection button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Light semi-transparent white on hover */
+    /* Slight lift on hover */
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3);
+    /* Slight shadow on hover */
+}
+
+
+/* Input Group */
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    padding: 8px 14px;
+    /* Adequate padding for ease of use */
+    font-size: 16px;
+    /*font-family: "Livvik", sans-serif;/*
+    /* Clean and simple font */
+    width: 100%;
+    background-color: #1e1e1e;
+    /* Dark background for the input */
+    border: none;
+    /* Removing default borders */
+    border-bottom: 2px solid #3a3a3a;
+    /* Subtle border at the bottom */
+    color: #e0e0e0;
+    /* Light text for better contrast */
+    border-radius: 4px 4px 0 0;
+    /* Rounded corners on top only */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Placeholder Styling */
+.input-group input::placeholder {
+    color: #888;
+    /* Light gray placeholder */
+    opacity: 0.8;
+    /* Slight transparency for a soft effect */
+}
+
+/* Input Focus State */
+.input-group input:focus {
+    outline: none;
+    /* Removing default focus outline */
+    border-bottom-color: white;
+    /* Accent color for the focus state */
+    background-color: #252525;
+    /* Slightly lighter background on focus */
+    transition: background-color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+/* Input Hover State */
+.input-group input:hover {
+    border-bottom-color: white;
+    /* Green bottom border on hover */
+}
+
+/* Input Focus - Hiding Placeholder */
+.input-group input:focus::placeholder {
+    opacity: 0;
+    /* Hides the placeholder when the input is focused */
+}
+
+/* Buttons */
+button {
+    padding: 12px 25px;
+    background-color: #ffffff;
+    /* White button for contrast */
+    color: #000000;
+    /* Black text */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+button:hover {
+    background-color: grey;
+    transform: translateY(-2px);
+    /* Light grey for hover effect */
+    /* box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2); White shadow for hover */
+    /* transform: translateY(-2px); */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.5);
+    /* White outline */
+}
+
+/* Loader Styling */
+/* .loader {
+    border: 4px solid #333333; /* Dark grey loader background */
+/* border-top: 4px solid #ffffff; White loader line */
+/* border-radius: 50%; */
+/* width: 30px; */
+/* height: 30px;
+    animation: spin 1s linear infinite; */
+/* margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%; */
+/* transform: translate(-50%, -50%); */
+/* } */
+
+/* Loader Animation */
+/* @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide the button and show loader */
+/* button.loading {
+    display: none;
+} */
+
+
+/* Error Message */
+.error {
+    color: #f28b82;
+    /* Lighter red color */
+    font-size: 10px;
+    /* Slightly larger font size */
+    margin-top: 3px;
+    /* Reduced margin to bring it closer to the input */
+    margin-left: 2px;
+    /* Added slight left margin to align better with input */
+}
+
+/* OTP Container */
+.otp-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+.otp-input input::placeholder {
+    color: #aaa;
+}
+
+#otp-input {
+    margin-top: 20px;
+}
+
+#otp-input h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#otp-input p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+#otp-input {
+    display: flex;
+    /* Add this */
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#otp-input input {
+    /* Adjust the width as needed *
+    /* Set the height explicitly */
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    width: 30px !important;
+        /* Ensure width is applied */
+        height: 35px !important;
+        /* Ensure height is applied */
+        font-size: 14px !important;
+        /* Reduce font size */
+        padding: 4px !important;
+        /* Reduce padding */
+        flex: 0 !important;
+        /* Remove flex-grow */
+        margin: 0 2px !important;
+        /* Adjust spacing */
+    /* Add this to make the inputs equally spaced */
+}
+
+#otp-input input:focus {
+    outline: 2px solid #d0caca;
+}
+
+/* Submit Button */
+#submit-button {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+}
+
+#submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Text-style for Resend OTP (Before it becomes a button) */
+#resend-otp-button {
+    background: none;
+    border: none;
+    color: white;
+    /* Match the text color */
+    font-size: 14px;
+    /* Match the text size of "Didn't receive the OTP" */
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline;
+    /* To make it inline with the text */
+    padding: 0;
+    /* Remove padding */
+    margin: 0;
+    /* Remove margin */
+}
+
+/* Button-style for Resend OTP (After timer) */
+#resend-otp-button.active {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    font-size: 16px;
+    border: none;
+    /* transition: background-color 0.3s ease, transform 0.2s ease; */
+}
+
+#resend-otp-button.active:hover {
+    /* background-color: #d9d9d9; */
+    /* transform: translateY(-2px); */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 20% auto;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    #otp-input input {
+        width: 35px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
+/* Loader Styles */
+.loader {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    /* Increased width for better spacing */
+    height: 10px;
+}
+
+.loader div {
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    /* White color for visibility on black background */
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    transform: translateY(-50%);
+    /* Center the dots */
+}
+
+/* Loader Styles */
+/* Reset any inherited transformations or rotations */
+.loader {
+    transform: none !important;
+    /* Remove any transform applied from the parent or container */
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 10px;
+}
+
+.loader div {
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    transform: translateY(-50%);
+    /* Ensure no unwanted transformations */
+}
+
+/* Dot 1 */
+/* Reset any inherited transformations or rotations */
+.loader {
+    transform: none !important;
+    /* Remove any transform applied from the parent or container */
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 10px;
+}
+
+.loader div {
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    transform: translateY(-50%)
+        /* Ensure no unwanted transformations */
+}
+
+/* Dot 1 */
+.loader div:nth-child(1) {
+    left: 0;
+    animation: pulse1 0.6s infinite;
+}
+
+/* Dot 2 */
+.loader div:nth-child(2) {
+    left: 12px;
+    animation: pulse2 0.6s infinite;
+}
+
+/* Dot 3 */
+.loader div:nth-child(3) {
+    left: 24px;
+    animation: pulse3 0.6s infinite;
+}
+
+/* Dot 4 */
+.loader div:nth-child(4) {
+    left: 36px;
+    animation: pulse4 0.6s infinite;
+}
+#resend-timer {
+    margin-top: 20px;
+}
+
+#resend-otp-button {
+    margin-top: 20px;
+}
+
+
+#error-message {
+    margin-top: 20px;
+}
+
+#email-error {
+    margin-bottom: 20px;
+}
+
+/* Keyframes for the pulsing effect */
+@keyframes pulse1 {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scale(0);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes pulse2 {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scale(0);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes pulse3 {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scale(0);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+@keyframes pulse4 {
+
+    0%,
+    100% {
+        transform: translateY(-50%) scale(0);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+/* For Extra Small Devices (320px to 480px) */
+@media (max-width: 480px) {
+    .p-text {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        padding: 30px;
+        margin-left: -3px;
+        margin-top: 200px;
+        margin-bottom: 200px;
+    }
+
+    #head h2 {
+        font-size: 20px;
+        /* Adjust heading size */
+    }
+
+    .method-selection button {
+        font-size: 10px;
+        /* Smaller buttons */
+        padding: 6px 4px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+        padding: 6px 10px;
+        width: 60%;
+        margin-left: 55px;
+    }
+
+    button {
+        font-size: 12px;
+        /* Adjust button text size */
+        padding: 8px 15px;
+    }
+
+    .otp-input input {
+        width: 25px !important;
+        /* Ensure width is applied */
+        height: 35px !important;
+        /* Ensure height is applied */
+        font-size: 14px !important;
+        /* Reduce font size */
+        padding: 4px !important;
+        /* Reduce padding */
+        flex: 0 !important;
+        /* Remove flex-grow */
+        margin: 0 2px !important;
+        /* Adjust spacing */
+    }
+
+    .name {
+        font-size: 20px;
+    }
+    #resend-timer {
+        margin-top: 10px;
+    }
+
+    #resend-otp-button {
+        margin-top: 10px;
+    }
+
+    #error-message {
+        margin-top: 10px;
+    }
+
+    #email-error {
+        margin-bottom: 10px;
+    }
+
+    .name {
+        font-size: 20px;
+    }
+}
+
+/* For Small Devices (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin-top: 200px;
+        margin-bottom: 200px;
+    }
+
+    .p-text {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #head h2 {
+        font-size: 24px;
+    }
+
+    .name {
+        font-size: 24px;
+    }
+
+    .method-selection button {
+        font-size: 12px;
+        padding: 8px 6px;
+    }
+
+    .input-group input {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .otp-input input {
+        width: 25px !important;
+        /* Ensure width is applied */
+        height: 35px !important;
+        /* Ensure height is applied */
+        font-size: 14px !important;
+        /* Reduce font size */
+        padding: 4px !important;
+        /* Reduce padding */
+        flex: 0 !important;
+        /* Remove flex-grow */
+        margin: 0 2px !important;
+        /* Adjust spacing */
+    }
+    #resend-timer {
+        margin-top: 20px;
+    }
+
+    #resend-otp-button {
+        margin-top: 20px;
+    }
+
+    #error-message {
+        margin-top: 20px;
+    }
+
+    #email-error {
+        margin-bottom: 20px;
+    }
+}
+
+/* For Medium Devices (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 25px;
+        margin-top: 200px;
+        margin-bottom: 200px;
+    }
+
+    .p-text {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #head h2 {
+        font-size: 23px;
+    }
+
+    .name {
+        font-size: 26px;
+    }
+
+    .method-selection button {
+        font-size: 14px;
+        padding: 10px 8px;
+    }
+
+    .input-group input {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+
+    .otp-input input {
+        width: 30px !important;
+        /* Ensure width is applied */
+        height: 35px !important;
+        /* Ensure height is applied */
+        font-size: 14px !important;
+        /* Reduce font size */
+        padding: 4px !important;
+        /* Reduce padding */
+        flex: 0 !important;
+        /* Remove flex-grow */
+        margin: 0 2px !important;
+        /* Adjust spacing */
+    }
+
+    #resend-timer {
+        margin-top: 20px;
+    }
+
+    #resend-otp-button {
+        margin-top: 20px;
+    }
+
+    #error-message {
+        margin-top: 20px;
+    }
+
+    #email-error {
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .p-text {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .otp-input input {
+        width: 35px !important;
+        /* Ensure width is applied */
+        height: 40px !important;
+        /* Ensure height is applied */
+        font-size: 14px !important;
+        /* Reduce font size */
+        padding: 4px !important;
+        /* Reduce padding */
+        flex: 0 !important;
+        /* Remove flex-grow */
+        margin: 0 2px !important;
+        /* Adjust spacing */
+    }
+
+    #resend-timer {
+        margin-top: 20px;
+    }
+
+    #resend-otp-button {
+        margin-top: 20px;
+    }
+
+
+    #error-message {
+        margin-top: 20px;
+    }
+
+    #email-error {
+        margin-bottom: 20px;
+    }
+}
