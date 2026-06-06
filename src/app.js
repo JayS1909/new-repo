@@ -10,13 +10,15 @@ import paymentRouter from './routes/payments.routes.js'
 import ordersRouter from './routes/orders.routes.js'
 import delhiveryRouter from './routes/delhivery.routes.js'
 import adminRouter from './routes/admin.routes.js'
+import wishlistRouter from './routes/wishlist.routes.js'
 import session from "express-session";
 import Razorpay from "razorpay";
 import bodyParser from "body-parser";
-
+import helmet from "helmet";
 
 
 const app = express();
+app.use(helmet());
 app.use(bodyParser.urlencoded({extended: true}))
 
 // const razorpay = new Razorpay({
@@ -60,6 +62,7 @@ app.use(paymentRouter)
 app.use(ordersRouter);
 app.use(delhiveryRouter);
 app.use(adminRouter);
+app.use(wishlistRouter);
 
 // app.use('/api/cart', cartRouter);
 

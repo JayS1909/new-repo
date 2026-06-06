@@ -1,6 +1,7 @@
 import express from "express";
 import { Router } from "express";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { optionalAuth } from "../middlewares/optionalAuth.middleware.js";
 import Product from "../models/products.models.js";
 import mongoose from "mongoose";
 import {displayStock} from "../conrollers/orders.controller.js"
@@ -8,16 +9,17 @@ import { trackShipment } from "../conrollers/payments.controller.js";
 
 
 const router = Router();
-router.get("/",verifyJWT,async (req,res) => {
+router.get("/", optionalAuth, async (req,res,next) => {
     try {
         const featuredProducts = await Product.find({isFeatured: true}).limit(3);
-        res.render("homepage",{user: req.user,products: featuredProducts});
+        return res.render("homepage",{user: req.user,products: featuredProducts});
     } catch (error) {
         console.log("Something went wrong in fetching home page and the featured products",error);
+        return next(error);
     }
 });
 
-router.get("/viewAll", verifyJWT, async (req, res) => {
+router.get("/viewAll", optionalAuth, async (req, res) => {
     try {
         const products = await Product.find({});
         // Separate products based on originalPrice
@@ -54,7 +56,7 @@ router.get("/viewAll", verifyJWT, async (req, res) => {
     }
 });
 
-router.get('/product/:id', verifyJWT, async (req, res) => {
+router.get('/product/:id', optionalAuth, async (req, res) => {
     try {
         const productId = req.params.id;
         if (!mongoose.Types.ObjectId.isValid(productId)) {
@@ -123,6 +125,21 @@ router.get("/shippingPolicy",(req,res)=> {
 
 router.get("/termsOfService",(req,res) => {
     return res.render("termsOfService");
+});
+
+router.get("/wishlist", optionalAuth, async (req, res) => {
+    try {
+        const { Wishlist } = await import('../models/wishlist.models.js');
+        const userId = req.user ? req.user._id : null;
+        let wishlist = null;
+        if (userId) {
+             wishlist = await Wishlist.findOne({ user: userId }).populate('products');
+        }
+        res.render("wishlist", { user: req.user, wishlist, title: "Your Wishlist | EXTRAALAYER" });
+    } catch (err) {
+        console.error(err);
+        res.render("wishlist", { user: req.user, wishlist: null, title: "Your Wishlist | EXTRAALAYER" });
+    }
 });
 
 router.get("/displayAuthOrders",verifyJWT,(req,res) => {

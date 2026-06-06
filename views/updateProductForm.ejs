@@ -56,6 +56,46 @@
             </div>
 
             <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="Oversized T-Shirts" <%= product.category === 'Oversized T-Shirts' ? 'selected' : '' %>>Oversized T-Shirts</option>
+                    <option value="Oversized Shirts" <%= product.category === 'Oversized Shirts' ? 'selected' : '' %>>Oversized Shirts</option>
+                    <option value="Shirts" <%= product.category === 'Shirts' ? 'selected' : '' %>>Shirts</option>
+                    <option value="T-Shirts" <%= product.category === 'T-Shirts' ? 'selected' : '' %>>T-Shirts</option>
+                    <option value="Hoodies" <%= product.category === 'Hoodies' ? 'selected' : '' %>>Hoodies</option>
+                    <option value="Sweatshirts" <%= product.category === 'Sweatshirts' ? 'selected' : '' %>>Sweatshirts</option>
+                    <option value="Cargo Pants" <%= product.category === 'Cargo Pants' ? 'selected' : '' %>>Cargo Pants</option>
+                    <option value="Joggers" <%= product.category === 'Joggers' ? 'selected' : '' %>>Joggers</option>
+                    <option value="Jeans" <%= product.category === 'Jeans' ? 'selected' : '' %>>Jeans</option>
+                    <option value="Jackets" <%= product.category === 'Jackets' ? 'selected' : '' %>>Jackets</option>
+                    <option value="Co-Ord Sets" <%= product.category === 'Co-Ord Sets' ? 'selected' : '' %>>Co-Ord Sets</option>
+                    <option value="Accessories" <%= product.category === 'Accessories' ? 'selected' : '' %>>Accessories</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="subcategory">Subcategory:</label>
+                <input type="text" id="subcategory" name="subcategory" value="<%= product.subcategory %>">
+            </div>
+
+            <div class="form-group">
+                <label for="collectionTheme">Collection Theme:</label>
+                <select id="collectionTheme" name="collectionTheme">
+                    <option value="General" <%= product.collectionTheme === 'General' ? 'selected' : '' %>>General</option>
+                    <option value="Anime" <%= product.collectionTheme === 'Anime' ? 'selected' : '' %>>Anime</option>
+                    <option value="Acid Wash" <%= product.collectionTheme === 'Acid Wash' ? 'selected' : '' %>>Acid Wash</option>
+                    <option value="Minimal" <%= product.collectionTheme === 'Minimal' ? 'selected' : '' %>>Minimal</option>
+                    <option value="Graphic" <%= product.collectionTheme === 'Graphic' ? 'selected' : '' %>>Graphic</option>
+                    <option value="Typography" <%= product.collectionTheme === 'Typography' ? 'selected' : '' %>>Typography</option>
+                    <option value="Vintage Wash" <%= product.collectionTheme === 'Vintage Wash' ? 'selected' : '' %>>Vintage Wash</option>
+                    <option value="Premium Essentials" <%= product.collectionTheme === 'Premium Essentials' ? 'selected' : '' %>>Premium Essentials</option>
+                    <option value="New Arrivals" <%= product.collectionTheme === 'New Arrivals' ? 'selected' : '' %>>New Arrivals</option>
+                    <option value="Best Sellers" <%= product.collectionTheme === 'Best Sellers' ? 'selected' : '' %>>Best Sellers</option>
+                    <option value="Limited Drops" <%= product.collectionTheme === 'Limited Drops' ? 'selected' : '' %>>Limited Drops</option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <label for="isFeatured">Featured:</label>
                 <input type="checkbox" id="isFeatured" name="isFeatured" <%= product.isFeatured ? 'checked' : '' %> >
             </div>

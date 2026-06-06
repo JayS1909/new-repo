@@ -3,15 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VINTITI</title>
+    <!-- SEO and OpenGraph -->
+    <meta name="description" content="EXTRAALAYER - Premium Gen-Z men's streetwear. Oversized t-shirts, hoodies, acid wash, anime prints and dark luxury aesthetics. Layer Up. Stand Out.">
+    <meta name="keywords" content="streetwear, mens fashion, oversized t-shirts, hoodies, acid wash, anime streetwear, dark luxury">
+    <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : 'EXTRAALAYER | Layer Up. Stand Out.' %>">
+    <meta property="og:description" content="Premium Gen-Z men's streetwear.">
+    <meta property="og:image" content="/images/placeholder_hero.jpg">
+    <meta property="og:url" content="https://extraalayer.com">
+    <link rel="canonical" href="https://extraalayer.com">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? title : 'EXTRAALAYER | Layer Up. Stand Out.' %>">
+    <meta name="twitter:description" content="Premium Gen-Z men's streetwear.">
+    <meta name="twitter:image" content="/images/placeholder_hero.jpg">
+
+    <title><%= typeof title !== 'undefined' ? title : 'EXTRAALAYER' %></title>
     <link rel="stylesheet" href="/css/nav_bar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> <!-- Fixed link -->
+    <style>
+        .navbar {
+            background-color: #0a0a0a !important;
+            border-bottom: 1px solid #333;
+        }
+        .extraalayer-logo {
+            display: inline-block;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .bi-person { fill: #fff; }
+        .cart-toggle img { filter: invert(1); } /* Invert generic black icons if any */
+        .cart-panel { background-color: #1a1a1a; color: #f0f0f0; }
+        .cart-panel-header, .cart-panel-footer { border-color: #333; }
+        .sideNav { background-color: #1a1a1a; }
+        .sideNav ul li a { color: #f0f0f0; }
+    </style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="vintiti-logo">
-            <a href="/">
-                <img src="/images/vintiti.jpg" class="logo-image" alt="VINTITI LOGO">
+        <div class="brand-logo" style="flex:1; padding-left: 20px;">
+            <a href="/" class="extraalayer-logo">
+                EXTRAALAYER
             </a>
         </div>
 
@@ -75,9 +111,14 @@
     <div id="Nav-overlay" class="Nav-overlay" onclick="closeNav()"></div>
     <div id="mySideNav" class="sideNav">
         <ul class="nav" id="nav">
-            <li><a href="#">MEN</a></li>
-            <li><a href="#">WOMEN</a></li>
-            <li><a href="#">OTHER</a></li>
+            <!-- Phase 2 taxonomy implementation: Men's streetwear only -->
+            <li><a href="/viewAll?category=Oversized T-Shirts">Oversized T-Shirts</a></li>
+            <li><a href="/viewAll?category=Hoodies">Hoodies</a></li>
+            <li><a href="/viewAll?category=Sweatshirts">Sweatshirts</a></li>
+            <li><a href="/viewAll?category=Cargo Pants">Cargo Pants</a></li>
+            <li><a href="/viewAll?collectionTheme=Anime">Anime Collection</a></li>
+            <li><a href="/viewAll?collectionTheme=Acid Wash">Acid Wash Collection</a></li>
+            <li><a href="/viewAll">Shop All</a></li>
         </ul>
     </div>
     <script src="/js/nav_bar.js" defer></script>

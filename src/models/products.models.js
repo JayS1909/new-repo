@@ -65,14 +65,54 @@ const productSchema = new mongoose.Schema({
         default: false
     },
     category: {
-        type: String, enum:['men','women','unisex'], 
+        type: String,
+        enum: [
+            'Oversized T-Shirts',
+            'Oversized Shirts',
+            'Shirts',
+            'T-Shirts',
+            'Hoodies',
+            'Sweatshirts',
+            'Cargo Pants',
+            'Joggers',
+            'Jeans',
+            'Jackets',
+            'Co-Ord Sets',
+            'Accessories'
+        ],
         required: true
     },
-    
-    // ratings: {
-    //     type: [Number],
-    //     default: []
-    // }
+    collectionTheme: {
+        type: String,
+        enum: [
+            'Anime',
+            'Acid Wash',
+            'Minimal',
+            'Graphic',
+            'Typography',
+            'Vintage Wash',
+            'Premium Essentials',
+            'New Arrivals',
+            'Best Sellers',
+            'Limited Drops',
+            'General'
+        ],
+        default: 'General'
+    },
+    fit: {
+        type: String,
+        enum: ['Oversized', 'Regular', 'Slim', 'Relaxed']
+    },
+    material: {
+        type: String
+    },
+    color: {
+        type: String
+    },
+    ratings: {
+         type: [Number],
+         default: []
+    }
 },{timestamps:true});
 
 productSchema.virtual('calculatedDiscountedPrice').get(function() {

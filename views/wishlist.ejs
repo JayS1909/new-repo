@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Wishlist | EXTRAALAYER</title>
+    <link rel="stylesheet" href="/css/cards.css">
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .wishlist-container {
+            padding: 4rem 5%;
+            min-height: 60vh;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .empty-state {
+            text-align: center;
+            color: #a0a0a0;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+        }
+        .empty-state a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            color: #0a0a0a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .product-card {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            width: 300px;
+            padding: 15px;
+            text-align: center;
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-title {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .product-price {
+            color: #a0a0a0;
+            margin-bottom: 15px;
+        }
+        .remove-btn {
+            background-color: transparent;
+            color: #ff4444;
+            border: 1px solid #ff4444;
+            padding: 5px 15px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+        .remove-btn:hover {
+            background-color: #ff4444;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/nav_bar') %>
+
+    <div class="wishlist-container">
+        <h1 class="page-header">Your Wishlist</h1>
+
+        <% if (typeof wishlist === 'undefined' || !wishlist || wishlist.products.length === 0) { %>
+            <div class="empty-state">
+                <p>Your wishlist is currently empty.</p>
+                <a href="/viewAll">SHOP MENSWEAR</a>
+            </div>
+        <% } else { %>
+            <div class="product-grid">
+                <% wishlist.products.forEach(product => { %>
+                    <div class="product-card">
+                        <a href="/product/<%= product._id %>" style="text-decoration: none;">
+                            <img src="<%= product.images[0] %>" alt="<%= product.productName %>">
+                            <h3 class="product-title"><%= product.productName %></h3>
+                            <p class="product-price">₹ <%= product.discountedPrice || product.originalPrice %></p>
+                        </a>
+                        <button class="remove-btn" onclick="removeFromWishlist('<%= product._id %>')">Remove</button>
+                    </div>
+                <% }) %>
+            </div>
+        <% } %>
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <script>
+        async function removeFromWishlist(productId) {
+            try {
+                const response = await fetch('/api/wishlist/toggle', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ productId })
+                });
+                if(response.ok) {
+                    window.location.reload();
+                } else {
+                    alert('Failed to remove item.');
+                }
+            } catch (err) {
+                console.error('Error removing from wishlist', err);
+            }
+        }
+    </script>
+</body>
+</html>
